@@ -23,6 +23,7 @@ class Jacobiana
 		///<param name="indiceFuncao"> Índice da função a ser avaliada </param>
 		///<param name="indiceX"> Índice da variável em análise </param>
 		///<param name="x"> Vetor das variáveis </param>
+		///<return> Valor da derivada calculada </returns>
 		double calculaDerivada(int indiceFuncao, int indiceX, double* x);
 		
 
@@ -44,7 +45,7 @@ class Jacobiana
 
 		///<summary> Avalia a matriz em um ponto </summary>
 		///<param name="x"> Vetor em análise </param>
-		///<return> A matriz calculada </return>
+		///<returns> A matriz calculada </return>
 		double** avaliar(double *x);
 };
 

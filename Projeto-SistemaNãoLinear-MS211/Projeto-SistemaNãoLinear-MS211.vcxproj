@@ -167,6 +167,7 @@
     <ClCompile Include="Projeto-SistemaNãoLinear-MS211.cpp" />
     <ClCompile Include="sistemaLinear.cpp" />
     <ClCompile Include="sistemaNaoLinear.cpp" />
+    <ClCompile Include="testes.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
