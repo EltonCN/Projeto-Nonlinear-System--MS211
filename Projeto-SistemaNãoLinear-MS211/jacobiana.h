@@ -15,7 +15,7 @@ class Jacobiana
 		Funcao *funcao;///<value> Vetor de funções </value>
 		
 		///<value> Diferença a ser utilizada </value>
-		int h; 
+		double h; 
 		int nFuncao, ///<value> Número de funções no vetor </value>
 			nIncognita; ///<value> Número de variáveis das funções </value>
 

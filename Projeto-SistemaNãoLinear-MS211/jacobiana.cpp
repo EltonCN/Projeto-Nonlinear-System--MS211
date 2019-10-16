@@ -31,11 +31,15 @@ double Jacobiana::calculaDerivada(int indiceFuncao, int indiceX, double* x)
 
 		if (i == indiceX)
 		{
-			xh[i] += h;
+			xh[i] += this->h;
 		}
 	}
 
-	return (funcao[indiceFuncao](xh) - funcao[indiceFuncao](x)) / h;
+	double f1 = funcao[indiceFuncao](xh);
+	double f2 = funcao[indiceFuncao](x);
+	double resultado = ( f1 - f2) / this->h;
+
+	return resultado;
 }
 
 void Jacobiana::setH(double h)
@@ -45,15 +49,18 @@ void Jacobiana::setH(double h)
 
 double** Jacobiana::avaliar(double *x)
 {
-	double** resultado = (double**)malloc(nFuncao * sizeof(double*));
+	double** resultado = (double**)malloc(nIncognita * sizeof(double*));
 
-	for (int i = 0; i < nFuncao; i++)
+	for (int i = 0; i < nIncognita; i++)
 	{
-		resultado[i] = (double*)malloc(nIncognita * sizeof(double*));
+		resultado[i] = (double*) malloc(nFuncao * sizeof(double));
+	}
 
-		for (int j = 0; j < nIncognita; j++)
+	for (int i = 0; i < nIncognita; i++)
+	{
+		for (int j = 0; j < nFuncao; j++)
 		{
-			resultado[i][j] = calculaDerivada(i, j, x);
+			resultado[j][i] = calculaDerivada(j, i, x);
 		}
 	}
 

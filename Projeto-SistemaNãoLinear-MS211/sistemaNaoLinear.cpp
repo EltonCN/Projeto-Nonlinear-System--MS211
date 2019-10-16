@@ -42,6 +42,8 @@ SistemaNaoLinear::~SistemaNaoLinear()
 void SistemaNaoLinear::inserirFuncao(int indice, Funcao funcao)
 {
 	this->funcao[indice] = funcao;
+
+	jacobiana.inserirFuncao(indice, funcao);
 }
 
 void SistemaNaoLinear::setParadaIteracao(int nMaxInteracao)

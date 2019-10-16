@@ -14,6 +14,7 @@ class SistemaLinear
 		double erroMaximo; ///<value> Erro máximo nas funções </value>
 
 		int nEquacao;///<value> O número de equações do sistema </value>
+		int *permutado;
 
 		double** m; ///<value> A matriz de coeficientes </value>
 		double* b; ///<value> O vetor dos termos independentes </value>

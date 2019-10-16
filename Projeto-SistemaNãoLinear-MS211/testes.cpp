@@ -1,7 +1,39 @@
 #include <iostream>
 #include <stdlib.h>
 
+#include "pch.h"
 #include "sistemaLinear.h"
+
+/*
+void testaJacobiana()
+{
+	Jacobiana jacobiana(2,2);
+
+	jacobiana.inserirFuncao(0, &f1Teste);
+	jacobiana.inserirFuncao(1, &f2Teste);
+
+	jacobiana.setH(0.2);
+
+	double xTeste[2];
+
+	xTeste[0] = 5;
+	xTeste[1] = 8;
+
+	double **resultadoTeste = jacobiana.avaliar(xTeste);
+
+	std::cout << resultadoTeste[0][0] << " " << resultadoTeste[0][1] << "\n";
+	std::cout << resultadoTeste[1][0] << " " << resultadoTeste[1][1] << "\n";
+}
+
+double f1Teste(double *x)
+{
+	return pow(x[0], 2) + (3 * pow(x[1], 2));
+}
+
+double f2Teste(double *x)
+{
+	return (5*pow(x[0], 3)) + (2 * x[1]);
+}
 
 
 void testaSistemaLinear()
@@ -43,4 +75,4 @@ void testaSistemaLinear()
 
 	std::cout << "x = " << solucao[0] << "\ny = " << solucao[1];
 	std::cout << "\nz = " << solucao[2];
-}
+}*/
