@@ -9,79 +9,88 @@
 typedef double(*Funcao)(double*);
 #endif 
 
-///<summary> Resolve um sistema n„o linear </summary>
+/// <summary> Resolve um sistema n√£o linear </summary>
 class SistemaNaoLinear
 {
 	private:
-		double* xAtual; ///<value> SoluÁ„o atual do sistema </value>
-		double* xAnterior; ///<value> SoluÁ„o anterior do sistema </value>
-		double* funcaoPontoN; ///<value> Valor da funÁ„o no ponto atual </value>
-		double* delta; ///<value> DiferenÁa entre xAtual e xAnterior </value>
+		double* xAtual; /// <value> Solu√ß√£o atual do sistema </value>
+		double* xAnterior; /// <value> Solu√ß√£o anterior do sistema </value>
+		double* funcaoPontoN; /// <value> Valor da fun√ß√£o no ponto atual </value>
+		double* delta; /// <value> Diferen√ßa entre xAtual e xAnterior </value>
 
-		int nFuncao, ///<value> N˙mero de funÁıes do sistema </value>
-			nIncognita; ///<value> N˙mero de incÛgnitas do sistema </value>
+		int nFuncao, /// <value> N√∫mero de fun√ß√µes do sistema </value>
+			nIncognita; /// <value> N√∫mero de inc√≥gnitas do sistema </value>
 
-		///<value> Vetor de funÁıes </value>
-		///<remarks> Devem retorna "0" no vetor soluÁ„o </remarks>
+		/// <value> Vetor de fun√ß√µes </value>
+		/// <remarks> Devem retorna "0" no vetor solu√ß√£o </remarks>
 		Funcao* funcao;
 
-		int nIteracao; ///<value> Õndice da iteraÁ„o atual </value>
-		int nMaxIteracao; ///<value> N˙mero m·ximo de iteraÁıes </value>
-		double erroMaximo; ///<value> Erro m·ximo nas funÁıes </value>
-		double** matrizJacobiana;
+		int nIteracao; /// <value> √çndice da itera√ß√£o atual </value>
+		int nMaxIteracao; /// <value> N√∫mero m√°ximo de itera√ß√µes </value>
+		double erroMaximo; /// <value> Erro m√°ximo nas fun√ß√µes </value>
+		double** matrizJacobiana; /// <value> Matriz Jacobiana atual </value>
+		bool print; /// <value> Armazena a op√ß√£o de printar os resultados </value>
 
-		SistemaLinear sistemaLinear; ///<value> Resolve o sistema linear </value>
-		Jacobiana jacobiana; ///<value> Calcula a matriz Jacobiana </value>
+		SistemaLinear sistemaLinear; /// <value> Resolve o sistema linear </value>
+		Jacobiana jacobiana; /// <value> Calcula a matriz Jacobiana </value>
 
-		///<summary> Realiza uma iteraÁ„o </summary>
+		/// <summary> Realiza uma itera√ß√£o </summary>
 		void iterar();
 
-		///<summary> Calcula o erro m·ximo nas funÁıes </summary>
-		///<returns> O erro m·ximo </return>
+		/// <summary> Calcula o erro m√°ximo nas fun√ß√µes </summary>
+		/// <returns> O erro m√°ximo </returns>
 		double erro();
 
-		///<summary> Avalia as funÁıes no ponto atual </summary>
+		/// <summary> Avalia as fun√ß√µes no ponto atual </summary>
 		void avaliaFuncoes();
 
-		///<summary> Atualiza o vetor xAtual </summary>
+		/// <summary> Atualiza o vetor xAtual </summary>
 		void atualizaX();
 
-		///<summary> Atualiza a matriz Jacobiana </summary>
+		/// <summary> Atualiza a matriz Jacobiana </summary>
 		void atualizaJacobiana();
+
+		/// <summary> Imprime o valor da itera√ß√£o atual </summary>
+		void printX();
 	public:
-		///<summary> Construtor </summary>
-		///<param name="nFuncao"> N˙mero de funÁıes do sistema </param>
-		///<param name="nIncognita"> N˙mero de incÛgnitas do sistema </param>
+		/// <summary> Construtor </summary>
+		/// <param name="nFuncao"> N√∫mero de fun√ß√µes do sistema </param>
+		/// <param name="nIncognita"> N√∫mero de inc√≥gnitas do sistema </param>
 		SistemaNaoLinear(int nFuncao, int nIncognita);
 		~SistemaNaoLinear();
 
-		///<summary> Define uma das funÁıes do sistema </summary>
-		///<remarks> A funÁ„o deve retornar "0" no vetor soluÁ„o </remarks>
-		///<param name="indice"> Õndice da funÁ„o </param>
-		///<p·ram name="funcao"> Ponteiro para a funÁ„o </param>
+		/// <summary> Define uma das fun√ß√µes do sistema </summary>
+		/// <remarks> A fun√ß√£o deve retornar "0" no vetor solu√ß√£o </remarks>
+		/// <param name="indice"> √çndice da fun√ß√£o </param>
+		/// <param name="funcao"> Ponteiro para a fun√ß√£o </param>
 		void inserirFuncao(int indice, Funcao funcao);
 
-		///<summary> Define o n˙mero m·ximo de iteraÁıes </summary>
-		///<param name="nMaxIteracao"> O n˙mero m·ximo de iteraÁıes </param>
-		void setParadaIteracao(int nMaxInteracao);
+		/// <summary> Define o n√∫mero m√°ximo de itera√ß√µes </summary>
+		/// <param name="nMaxIteracao"> O n√∫mero m√°ximo de itera√ß√µes </param>
+		void setParadaIteracao(int nMaxIteracao);
 
-		///<summary> Define o erro m·ximo para parada </summary>
-		///<remarks> TambÈm determina que o algorÌtmo utilizar· esse critÈrio </remarks>
-		///<param name="erroMaximo"> O erro m·ximo a ser definido </param>
-		///<remaks> "0" para n„o utilizar esse critÈrio </remarks>
+		/// <summary> Define o erro m√°ximo para parada </summary>
+		/// <remarks> Tamb√©m determina que o algor√≠tmo utilizar√° esse crit√©rio </remarks>
+		/// <param name="erroMaximo"> O erro m√°ximo a ser definido </param>
+		/// <remarks> "0" para n√£o utilizar esse crit√©rio </remarks>
 		void setParadaErro(double erroMaximo);
 
-		///<summary> Calcula a soluÁ„o do sistema </summary>
-		///<param name="inicial"> O valor inicial para o sistema </param>
-		///<returns> O vetor soluÁ„o </returns>
+		/// <summary> Calcula a solu√ß√£o do sistema </summary>
+		/// <param name="inicial"> O valor inicial para o sistema </param>
+		/// <returns> O vetor solu√ß√£o </returns>
 		double* calcular(double* inicial);
 
-		///<summary> Define a diferenÁa h para c·lculo das derivadas </summary>
-		///<param name="h"> DiferenÁa </param>
+		/// <summary> Define a diferen√ßa h para c√°lculo das derivadas </summary>
+		/// <param name="h"> Diferen√ßa </param>
 		void setJacobiana(double h);
 
-		///<summary> Define os par‚metros para c·lculo do sistema linear </summary>
-		///<param name="nIteracaoMax"> O n˙mero m·ximo de iteraÁıes </param>
+		/// <summary> Define os par√¢metros para c√°lculo do sistema linear </summary>
+		/// <param name="nIteracaoMax"> O n√∫mero m√°ximo de itera√ß√µes </param>
+		/// <param name="erroMax"> O erro m√°ximo do sistema, 0 para n√£o usar </param>
 		void setLinear(int nIteracaoMax, double erroMax);
+		
+		/// <summary> Define se dever√° printar os valores das itera√ß√µes </summary>
+		/// <param name="print"> True se dever√° printar, false caso contr√°rio </param>
+		void setPrint(bool print);
 };
 

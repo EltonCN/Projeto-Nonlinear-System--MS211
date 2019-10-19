@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.16"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Método de Newton para Sistemas Não Lineares: Código-Fonte de C:/Users/Elton/source/Repos/Projeto-SistemaNãoLinear-MS211/Projeto-SistemaNãoLinear-MS211/sistemaNaoLinear.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Método de Newton para Sistemas Não Lineares
+   </div>
+   <div id="projectbrief">Projeto realizado para a disciplina MS211 - IMECC/Unicamp - Maicon 2019</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.16 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Busca');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">C:/Users/Elton/source/Repos/Projeto-SistemaNãoLinear-MS211/Projeto-SistemaNãoLinear-MS211/sistemaNaoLinear.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="sistema_nao_linear_8h.html">Vá para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="sistema_linear_8h.html">sistemaLinear.h</a>&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="jacobiana_8h.html">jacobiana.h</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#ifndef tipoFuncao</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#define tipoFuncao</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">typedef</span> double(*<a class="code" href="jacobiana_8h.html#a4346bb2a285e7c0158191de5fe539946">Funcao</a>)(<span class="keywordtype">double</span>*);</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#endif </span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="class_sistema_nao_linear.html">   13</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_sistema_nao_linear.html">SistemaNaoLinear</a></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="class_sistema_nao_linear.html#a0a8a9a2fc5258873c8890b0808ce54b1">   16</a></span>&#160;        <span class="keywordtype">double</span>* <a class="code" href="class_sistema_nao_linear.html#a0a8a9a2fc5258873c8890b0808ce54b1">xAtual</a>; </div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="class_sistema_nao_linear.html#a5600eb9fa149cf7732fdaf887b97c6f3">   17</a></span>&#160;        <span class="keywordtype">double</span>* <a class="code" href="class_sistema_nao_linear.html#a5600eb9fa149cf7732fdaf887b97c6f3">xAnterior</a>; </div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="class_sistema_nao_linear.html#adec166bcfdc00042ebb2806c24642e4c">   18</a></span>&#160;        <span class="keywordtype">double</span>* <a class="code" href="class_sistema_nao_linear.html#adec166bcfdc00042ebb2806c24642e4c">funcaoPontoN</a>; </div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="class_sistema_nao_linear.html#a01b4dcf20e6597664f6b8dc6f0003982">   19</a></span>&#160;        <span class="keywordtype">double</span>* <a class="code" href="class_sistema_nao_linear.html#a01b4dcf20e6597664f6b8dc6f0003982">delta</a>; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="class_sistema_nao_linear.html#a983a6206ff6c389bc3d47a86cfe2dbb6">   21</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="class_sistema_nao_linear.html#ac4d63e1c1cba762d101a36cd98ecdeaf">nFuncao</a>, </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            <a class="code" href="class_sistema_nao_linear.html#a983a6206ff6c389bc3d47a86cfe2dbb6">nIncognita</a>; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="class_sistema_nao_linear.html#af8b27fc4d97b246af06c81648ba88a79">   26</a></span>&#160;        <a class="code" href="jacobiana_8h.html#a4346bb2a285e7c0158191de5fe539946">Funcao</a>* <a class="code" href="class_sistema_nao_linear.html#af8b27fc4d97b246af06c81648ba88a79">funcao</a>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="class_sistema_nao_linear.html#a81790bb3b38d385f4fa70f07f82bbe73">   28</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="class_sistema_nao_linear.html#a81790bb3b38d385f4fa70f07f82bbe73">nIteracao</a>; </div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="class_sistema_nao_linear.html#afdc1871f9e8372b1a2be7ff04f0c4d40">   29</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="class_sistema_nao_linear.html#afdc1871f9e8372b1a2be7ff04f0c4d40">nMaxIteracao</a>; </div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="class_sistema_nao_linear.html#a8cc2da006efe8f05404b00684afd90f5">   30</a></span>&#160;        <span class="keywordtype">double</span> <a class="code" href="class_sistema_nao_linear.html#a8cc2da006efe8f05404b00684afd90f5">erroMaximo</a>; </div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="class_sistema_nao_linear.html#a30a5bed9d8bbc1f6746a530c5dabf02e">   31</a></span>&#160;        <span class="keywordtype">double</span>** <a class="code" href="class_sistema_nao_linear.html#a30a5bed9d8bbc1f6746a530c5dabf02e">matrizJacobiana</a>; </div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="class_sistema_nao_linear.html#aae53edefde6c58a49ef3b222996370ec">   32</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_sistema_nao_linear.html#aae53edefde6c58a49ef3b222996370ec">print</a>; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="class_sistema_nao_linear.html#a01a8e7c0e26a9c20778398941b538e70">   34</a></span>&#160;        <a class="code" href="class_sistema_linear.html">SistemaLinear</a> <a class="code" href="class_sistema_nao_linear.html#a01a8e7c0e26a9c20778398941b538e70">sistemaLinear</a>; </div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="class_sistema_nao_linear.html#a158f9a40cfdd9e10362e5ecc4f1a893c">   35</a></span>&#160;        <a class="code" href="class_jacobiana.html">Jacobiana</a> <a class="code" href="class_sistema_nao_linear.html#a158f9a40cfdd9e10362e5ecc4f1a893c">jacobiana</a>; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_sistema_nao_linear.html#adeb6924cf93ef64739eaa88abc98fdd7">iterar</a>();</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordtype">double</span> <a class="code" href="class_sistema_nao_linear.html#a5dc2a5f2e80b0915f7e5d19da6d0c7c5">erro</a>();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_sistema_nao_linear.html#ad51e54dc6205d2ace026b8182641149a">avaliaFuncoes</a>();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_sistema_nao_linear.html#a10c360c321e44e9af8514990cb695cc1">atualizaX</a>();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_sistema_nao_linear.html#ab2803ebd15f69c96e7ff20e1230003db">atualizaJacobiana</a>();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_sistema_nao_linear.html#a7d10529f493bfb5e08fa1ea1cd54325c">printX</a>();</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <a class="code" href="class_sistema_nao_linear.html#a5d92b4c782a6aa171bd6d86c6306365a">SistemaNaoLinear</a>(<span class="keywordtype">int</span> <a class="code" href="class_sistema_nao_linear.html#ac4d63e1c1cba762d101a36cd98ecdeaf">nFuncao</a>, <span class="keywordtype">int</span> <a class="code" href="class_sistema_nao_linear.html#a983a6206ff6c389bc3d47a86cfe2dbb6">nIncognita</a>);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <a class="code" href="class_sistema_nao_linear.html#ab3292a4080b2d272420c742c24f0a228">~SistemaNaoLinear</a>();</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_sistema_nao_linear.html#aa5c642ec6b4286f6cdfe727107861d34">inserirFuncao</a>(<span class="keywordtype">int</span> indice, <a class="code" href="jacobiana_8h.html#a4346bb2a285e7c0158191de5fe539946">Funcao</a> <a class="code" href="class_sistema_nao_linear.html#af8b27fc4d97b246af06c81648ba88a79">funcao</a>);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_sistema_nao_linear.html#aaeb448567919626e9a01b072551b7c9b">setParadaIteracao</a>(<span class="keywordtype">int</span> <a class="code" href="class_sistema_nao_linear.html#afdc1871f9e8372b1a2be7ff04f0c4d40">nMaxIteracao</a>);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_sistema_nao_linear.html#a05627073c16969176b07fd8b542c489c">setParadaErro</a>(<span class="keywordtype">double</span> <a class="code" href="class_sistema_nao_linear.html#a8cc2da006efe8f05404b00684afd90f5">erroMaximo</a>);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordtype">double</span>* <a class="code" href="class_sistema_nao_linear.html#a2e364a2c7819ad13d1ced937f9fe4e34">calcular</a>(<span class="keywordtype">double</span>* inicial);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_sistema_nao_linear.html#a326d69d417ace1296edb2f30a059ebb9">setJacobiana</a>(<span class="keywordtype">double</span> h);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_sistema_nao_linear.html#a7c5fa62b24ba9155fc6a0602b45359e7">setLinear</a>(<span class="keywordtype">int</span> nIteracaoMax, <span class="keywordtype">double</span> erroMax);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_sistema_nao_linear.html#a07a5e4f08d46c95231ac377cee4c83ba">setPrint</a>(<span class="keywordtype">bool</span> <a class="code" href="class_sistema_nao_linear.html#aae53edefde6c58a49ef3b222996370ec">print</a>);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;};</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclass_sistema_nao_linear_html_aaeb448567919626e9a01b072551b7c9b"><div class="ttname"><a href="class_sistema_nao_linear.html#aaeb448567919626e9a01b072551b7c9b">SistemaNaoLinear::setParadaIteracao</a></div><div class="ttdeci">void setParadaIteracao(int nMaxIteracao)</div><div class="ttdoc">Define o número máximo de iterações</div><div class="ttdef"><b>Definition:</b> <a href="sistema_nao_linear_8cpp_source.html#l00052">sistemaNaoLinear.cpp:52</a></div></div>
+<div class="ttc" id="aclass_sistema_nao_linear_html_a30a5bed9d8bbc1f6746a530c5dabf02e"><div class="ttname"><a href="class_sistema_nao_linear.html#a30a5bed9d8bbc1f6746a530c5dabf02e">SistemaNaoLinear::matrizJacobiana</a></div><div class="ttdeci">double ** matrizJacobiana</div><div class="ttdoc">Erro máximo nas funções</div><div class="ttdef"><b>Definition:</b> <a href="sistema_nao_linear_8h_source.html#l00031">sistemaNaoLinear.h:31</a></div></div>
+<div class="ttc" id="aclass_sistema_nao_linear_html_ad51e54dc6205d2ace026b8182641149a"><div class="ttname"><a href="class_sistema_nao_linear.html#ad51e54dc6205d2ace026b8182641149a">SistemaNaoLinear::avaliaFuncoes</a></div><div class="ttdeci">void avaliaFuncoes()</div><div class="ttdoc">Avalia as funções no ponto atual</div><div class="ttdef"><b>Definition:</b> <a href="sistema_nao_linear_8cpp_source.html#l00140">sistemaNaoLinear.cpp:140</a></div></div>
+<div class="ttc" id="aclass_sistema_nao_linear_html_a5dc2a5f2e80b0915f7e5d19da6d0c7c5"><div class="ttname"><a href="class_sistema_nao_linear.html#a5dc2a5f2e80b0915f7e5d19da6d0c7c5">SistemaNaoLinear::erro</a></div><div class="ttdeci">double erro()</div><div class="ttdoc">Calcula o erro máximo nas funções</div><div class="ttdef"><b>Definition:</b> <a href="sistema_nao_linear_8cpp_source.html#l00125">sistemaNaoLinear.cpp:125</a></div></div>
+<div class="ttc" id="aclass_sistema_nao_linear_html_a2e364a2c7819ad13d1ced937f9fe4e34"><div class="ttname"><a href="class_sistema_nao_linear.html#a2e364a2c7819ad13d1ced937f9fe4e34">SistemaNaoLinear::calcular</a></div><div class="ttdeci">double * calcular(double *inicial)</div><div class="ttdoc">Calcula a solução do sistema</div><div class="ttdef"><b>Definition:</b> <a href="sistema_nao_linear_8cpp_source.html#l00062">sistemaNaoLinear.cpp:62</a></div></div>
+<div class="ttc" id="aclass_sistema_nao_linear_html_ab2803ebd15f69c96e7ff20e1230003db"><div class="ttname"><a href="class_sistema_nao_linear.html#ab2803ebd15f69c96e7ff20e1230003db">SistemaNaoLinear::atualizaJacobiana</a></div><div class="ttdeci">void atualizaJacobiana()</div><div class="ttdoc">Atualiza a matriz Jacobiana</div><div class="ttdef"><b>Definition:</b> <a href="sistema_nao_linear_8cpp_source.html#l00158">sistemaNaoLinear.cpp:158</a></div></div>
+<div class="ttc" id="aclass_sistema_nao_linear_html_a01a8e7c0e26a9c20778398941b538e70"><div class="ttname"><a href="class_sistema_nao_linear.html#a01a8e7c0e26a9c20778398941b538e70">SistemaNaoLinear::sistemaLinear</a></div><div class="ttdeci">SistemaLinear sistemaLinear</div><div class="ttdoc">Armazena a opção de printar os resultados</div><div class="ttdef"><b>Definition:</b> <a href="sistema_nao_linear_8h_source.html#l00034">sistemaNaoLinear.h:34</a></div></div>
+<div class="ttc" id="aclass_sistema_linear_html"><div class="ttname"><a href="class_sistema_linear.html">SistemaLinear</a></div><div class="ttdoc">Implementa a resolução de sistemas lineares</div><div class="ttdef"><b>Definition:</b> <a href="sistema_linear_8h_source.html#l00005">sistemaLinear.h:5</a></div></div>
+<div class="ttc" id="aclass_sistema_nao_linear_html_aa5c642ec6b4286f6cdfe727107861d34"><div class="ttname"><a href="class_sistema_nao_linear.html#aa5c642ec6b4286f6cdfe727107861d34">SistemaNaoLinear::inserirFuncao</a></div><div class="ttdeci">void inserirFuncao(int indice, Funcao funcao)</div><div class="ttdoc">Define uma das funções do sistema</div><div class="ttdef"><b>Definition:</b> <a href="sistema_nao_linear_8cpp_source.html#l00045">sistemaNaoLinear.cpp:45</a></div></div>
+<div class="ttc" id="aclass_sistema_nao_linear_html_a81790bb3b38d385f4fa70f07f82bbe73"><div class="ttname"><a href="class_sistema_nao_linear.html#a81790bb3b38d385f4fa70f07f82bbe73">SistemaNaoLinear::nIteracao</a></div><div class="ttdeci">int nIteracao</div><div class="ttdef"><b>Definition:</b> <a href="sistema_nao_linear_8h_source.html#l00028">sistemaNaoLinear.h:28</a></div></div>
+<div class="ttc" id="aclass_sistema_nao_linear_html"><div class="ttname"><a href="class_sistema_nao_linear.html">SistemaNaoLinear</a></div><div class="ttdoc">Resolve um sistema não linear</div><div class="ttdef"><b>Definition:</b> <a href="sistema_nao_linear_8h_source.html#l00013">sistemaNaoLinear.h:13</a></div></div>
+<div class="ttc" id="aclass_sistema_nao_linear_html_a07a5e4f08d46c95231ac377cee4c83ba"><div class="ttname"><a href="class_sistema_nao_linear.html#a07a5e4f08d46c95231ac377cee4c83ba">SistemaNaoLinear::setPrint</a></div><div class="ttdeci">void setPrint(bool print)</div><div class="ttdoc">Define se deverá printar os valores das iterações</div><div class="ttdef"><b>Definition:</b> <a href="sistema_nao_linear_8cpp_source.html#l00172">sistemaNaoLinear.cpp:172</a></div></div>
+<div class="ttc" id="aclass_sistema_nao_linear_html_a7d10529f493bfb5e08fa1ea1cd54325c"><div class="ttname"><a href="class_sistema_nao_linear.html#a7d10529f493bfb5e08fa1ea1cd54325c">SistemaNaoLinear::printX</a></div><div class="ttdeci">void printX()</div><div class="ttdoc">Imprime o valor da iteração atual</div><div class="ttdef"><b>Definition:</b> <a href="sistema_nao_linear_8cpp_source.html#l00163">sistemaNaoLinear.cpp:163</a></div></div>
+<div class="ttc" id="aclass_sistema_nao_linear_html_a158f9a40cfdd9e10362e5ecc4f1a893c"><div class="ttname"><a href="class_sistema_nao_linear.html#a158f9a40cfdd9e10362e5ecc4f1a893c">SistemaNaoLinear::jacobiana</a></div><div class="ttdeci">Jacobiana jacobiana</div><div class="ttdoc">Resolve o sistema linear</div><div class="ttdef"><b>Definition:</b> <a href="sistema_nao_linear_8h_source.html#l00035">sistemaNaoLinear.h:35</a></div></div>
+<div class="ttc" id="aclass_jacobiana_html"><div class="ttname"><a href="class_jacobiana.html">Jacobiana</a></div><div class="ttdoc">Implementa o cálculo de uma matriz Jacobiana, aproximando as derivadas</div><div class="ttdef"><b>Definition:</b> <a href="jacobiana_8h_source.html#l00011">jacobiana.h:11</a></div></div>
+<div class="ttc" id="aclass_sistema_nao_linear_html_a0a8a9a2fc5258873c8890b0808ce54b1"><div class="ttname"><a href="class_sistema_nao_linear.html#a0a8a9a2fc5258873c8890b0808ce54b1">SistemaNaoLinear::xAtual</a></div><div class="ttdeci">double * xAtual</div><div class="ttdef"><b>Definition:</b> <a href="sistema_nao_linear_8h_source.html#l00016">sistemaNaoLinear.h:16</a></div></div>
+<div class="ttc" id="aclass_sistema_nao_linear_html_af8b27fc4d97b246af06c81648ba88a79"><div class="ttname"><a href="class_sistema_nao_linear.html#af8b27fc4d97b246af06c81648ba88a79">SistemaNaoLinear::funcao</a></div><div class="ttdeci">Funcao * funcao</div><div class="ttdoc">Número de incógnitas do sistema</div><div class="ttdef"><b>Definition:</b> <a href="sistema_nao_linear_8h_source.html#l00026">sistemaNaoLinear.h:26</a></div></div>
+<div class="ttc" id="aclass_sistema_nao_linear_html_a05627073c16969176b07fd8b542c489c"><div class="ttname"><a href="class_sistema_nao_linear.html#a05627073c16969176b07fd8b542c489c">SistemaNaoLinear::setParadaErro</a></div><div class="ttdeci">void setParadaErro(double erroMaximo)</div><div class="ttdoc">Define o erro máximo para parada</div><div class="ttdef"><b>Definition:</b> <a href="sistema_nao_linear_8cpp_source.html#l00057">sistemaNaoLinear.cpp:57</a></div></div>
+<div class="ttc" id="aclass_sistema_nao_linear_html_a7c5fa62b24ba9155fc6a0602b45359e7"><div class="ttname"><a href="class_sistema_nao_linear.html#a7c5fa62b24ba9155fc6a0602b45359e7">SistemaNaoLinear::setLinear</a></div><div class="ttdeci">void setLinear(int nIteracaoMax, double erroMax)</div><div class="ttdoc">Define os parâmetros para cálculo do sistema linear</div><div class="ttdef"><b>Definition:</b> <a href="sistema_nao_linear_8cpp_source.html#l00104">sistemaNaoLinear.cpp:104</a></div></div>
+<div class="ttc" id="aclass_sistema_nao_linear_html_a8cc2da006efe8f05404b00684afd90f5"><div class="ttname"><a href="class_sistema_nao_linear.html#a8cc2da006efe8f05404b00684afd90f5">SistemaNaoLinear::erroMaximo</a></div><div class="ttdeci">double erroMaximo</div><div class="ttdoc">Número máximo de iterações</div><div class="ttdef"><b>Definition:</b> <a href="sistema_nao_linear_8h_source.html#l00030">sistemaNaoLinear.h:30</a></div></div>
+<div class="ttc" id="aclass_sistema_nao_linear_html_a5d92b4c782a6aa171bd6d86c6306365a"><div class="ttname"><a href="class_sistema_nao_linear.html#a5d92b4c782a6aa171bd6d86c6306365a">SistemaNaoLinear::SistemaNaoLinear</a></div><div class="ttdeci">SistemaNaoLinear(int nFuncao, int nIncognita)</div><div class="ttdoc">Construtor</div><div class="ttdef"><b>Definition:</b> <a href="sistema_nao_linear_8cpp_source.html#l00024">sistemaNaoLinear.cpp:24</a></div></div>
+<div class="ttc" id="aclass_sistema_nao_linear_html_a326d69d417ace1296edb2f30a059ebb9"><div class="ttname"><a href="class_sistema_nao_linear.html#a326d69d417ace1296edb2f30a059ebb9">SistemaNaoLinear::setJacobiana</a></div><div class="ttdeci">void setJacobiana(double h)</div><div class="ttdoc">Define a diferença h para cálculo das derivadas</div><div class="ttdef"><b>Definition:</b> <a href="sistema_nao_linear_8cpp_source.html#l00099">sistemaNaoLinear.cpp:99</a></div></div>
+<div class="ttc" id="aclass_sistema_nao_linear_html_ac4d63e1c1cba762d101a36cd98ecdeaf"><div class="ttname"><a href="class_sistema_nao_linear.html#ac4d63e1c1cba762d101a36cd98ecdeaf">SistemaNaoLinear::nFuncao</a></div><div class="ttdeci">int nFuncao</div><div class="ttdoc">Diferença entre xAtual e xAnterior</div><div class="ttdef"><b>Definition:</b> <a href="sistema_nao_linear_8h_source.html#l00021">sistemaNaoLinear.h:21</a></div></div>
+<div class="ttc" id="aclass_sistema_nao_linear_html_aae53edefde6c58a49ef3b222996370ec"><div class="ttname"><a href="class_sistema_nao_linear.html#aae53edefde6c58a49ef3b222996370ec">SistemaNaoLinear::print</a></div><div class="ttdeci">bool print</div><div class="ttdoc">Matriz Jacobiana atual</div><div class="ttdef"><b>Definition:</b> <a href="sistema_nao_linear_8h_source.html#l00032">sistemaNaoLinear.h:32</a></div></div>
+<div class="ttc" id="aclass_sistema_nao_linear_html_a01b4dcf20e6597664f6b8dc6f0003982"><div class="ttname"><a href="class_sistema_nao_linear.html#a01b4dcf20e6597664f6b8dc6f0003982">SistemaNaoLinear::delta</a></div><div class="ttdeci">double * delta</div><div class="ttdoc">Valor da função no ponto atual</div><div class="ttdef"><b>Definition:</b> <a href="sistema_nao_linear_8h_source.html#l00019">sistemaNaoLinear.h:19</a></div></div>
+<div class="ttc" id="aclass_sistema_nao_linear_html_ab3292a4080b2d272420c742c24f0a228"><div class="ttname"><a href="class_sistema_nao_linear.html#ab3292a4080b2d272420c742c24f0a228">SistemaNaoLinear::~SistemaNaoLinear</a></div><div class="ttdeci">~SistemaNaoLinear()</div><div class="ttdef"><b>Definition:</b> <a href="sistema_nao_linear_8cpp_source.html#l00041">sistemaNaoLinear.cpp:41</a></div></div>
+<div class="ttc" id="aclass_sistema_nao_linear_html_adec166bcfdc00042ebb2806c24642e4c"><div class="ttname"><a href="class_sistema_nao_linear.html#adec166bcfdc00042ebb2806c24642e4c">SistemaNaoLinear::funcaoPontoN</a></div><div class="ttdeci">double * funcaoPontoN</div><div class="ttdoc">Solução anterior do sistema</div><div class="ttdef"><b>Definition:</b> <a href="sistema_nao_linear_8h_source.html#l00018">sistemaNaoLinear.h:18</a></div></div>
+<div class="ttc" id="aclass_sistema_nao_linear_html_a10c360c321e44e9af8514990cb695cc1"><div class="ttname"><a href="class_sistema_nao_linear.html#a10c360c321e44e9af8514990cb695cc1">SistemaNaoLinear::atualizaX</a></div><div class="ttdeci">void atualizaX()</div><div class="ttdoc">Atualiza o vetor xAtual</div><div class="ttdef"><b>Definition:</b> <a href="sistema_nao_linear_8cpp_source.html#l00149">sistemaNaoLinear.cpp:149</a></div></div>
+<div class="ttc" id="aclass_sistema_nao_linear_html_afdc1871f9e8372b1a2be7ff04f0c4d40"><div class="ttname"><a href="class_sistema_nao_linear.html#afdc1871f9e8372b1a2be7ff04f0c4d40">SistemaNaoLinear::nMaxIteracao</a></div><div class="ttdeci">int nMaxIteracao</div><div class="ttdoc">Índice da iteração atual</div><div class="ttdef"><b>Definition:</b> <a href="sistema_nao_linear_8h_source.html#l00029">sistemaNaoLinear.h:29</a></div></div>
+<div class="ttc" id="asistema_linear_8h_html"><div class="ttname"><a href="sistema_linear_8h.html">sistemaLinear.h</a></div></div>
+<div class="ttc" id="aclass_sistema_nao_linear_html_a5600eb9fa149cf7732fdaf887b97c6f3"><div class="ttname"><a href="class_sistema_nao_linear.html#a5600eb9fa149cf7732fdaf887b97c6f3">SistemaNaoLinear::xAnterior</a></div><div class="ttdeci">double * xAnterior</div><div class="ttdoc">Solução atual do sistema</div><div class="ttdef"><b>Definition:</b> <a href="sistema_nao_linear_8h_source.html#l00017">sistemaNaoLinear.h:17</a></div></div>
+<div class="ttc" id="ajacobiana_8h_html_a4346bb2a285e7c0158191de5fe539946"><div class="ttname"><a href="jacobiana_8h.html#a4346bb2a285e7c0158191de5fe539946">Funcao</a></div><div class="ttdeci">double(* Funcao)(double *)</div><div class="ttdef"><b>Definition:</b> <a href="jacobiana_8h_source.html#l00006">jacobiana.h:6</a></div></div>
+<div class="ttc" id="aclass_sistema_nao_linear_html_adeb6924cf93ef64739eaa88abc98fdd7"><div class="ttname"><a href="class_sistema_nao_linear.html#adeb6924cf93ef64739eaa88abc98fdd7">SistemaNaoLinear::iterar</a></div><div class="ttdeci">void iterar()</div><div class="ttdoc">Calcula a matriz Jacobiana</div><div class="ttdef"><b>Definition:</b> <a href="sistema_nao_linear_8cpp_source.html#l00110">sistemaNaoLinear.cpp:110</a></div></div>
+<div class="ttc" id="ajacobiana_8h_html"><div class="ttname"><a href="jacobiana_8h.html">jacobiana.h</a></div></div>
+<div class="ttc" id="aclass_sistema_nao_linear_html_a983a6206ff6c389bc3d47a86cfe2dbb6"><div class="ttname"><a href="class_sistema_nao_linear.html#a983a6206ff6c389bc3d47a86cfe2dbb6">SistemaNaoLinear::nIncognita</a></div><div class="ttdeci">int nIncognita</div><div class="ttdoc">Número de funções do sistema</div><div class="ttdef"><b>Definition:</b> <a href="sistema_nao_linear_8h_source.html#l00021">sistemaNaoLinear.h:21</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.16
+</small></address>
+</body>
+</html>

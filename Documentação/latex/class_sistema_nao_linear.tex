@@ -1,0 +1,562 @@
+\hypertarget{class_sistema_nao_linear}{}\doxysection{Referência da Classe Sistema\+Nao\+Linear}
+\label{class_sistema_nao_linear}\index{SistemaNaoLinear@{SistemaNaoLinear}}
+
+
+Resolve um sistema não linear  
+
+
+
+
+{\ttfamily \#include $<$sistema\+Nao\+Linear.\+h$>$}
+
+\doxysubsection*{Membros Públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_sistema_nao_linear_a5d92b4c782a6aa171bd6d86c6306365a}{Sistema\+Nao\+Linear}} (int \mbox{\hyperlink{class_sistema_nao_linear_ac4d63e1c1cba762d101a36cd98ecdeaf}{n\+Funcao}}, int \mbox{\hyperlink{class_sistema_nao_linear_a983a6206ff6c389bc3d47a86cfe2dbb6}{n\+Incognita}})
+\begin{DoxyCompactList}\small\item\em Construtor \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sistema_nao_linear_ab3292a4080b2d272420c742c24f0a228}{$\sim$\+Sistema\+Nao\+Linear}} ()
+\item 
+void \mbox{\hyperlink{class_sistema_nao_linear_aa5c642ec6b4286f6cdfe727107861d34}{inserir\+Funcao}} (int indice, \mbox{\hyperlink{jacobiana_8h_a4346bb2a285e7c0158191de5fe539946}{Funcao}} \mbox{\hyperlink{class_sistema_nao_linear_af8b27fc4d97b246af06c81648ba88a79}{funcao}})
+\begin{DoxyCompactList}\small\item\em Define uma das funções do sistema \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sistema_nao_linear_aaeb448567919626e9a01b072551b7c9b}{set\+Parada\+Iteracao}} (int \mbox{\hyperlink{class_sistema_nao_linear_afdc1871f9e8372b1a2be7ff04f0c4d40}{n\+Max\+Iteracao}})
+\begin{DoxyCompactList}\small\item\em Define o número máximo de iterações \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sistema_nao_linear_a05627073c16969176b07fd8b542c489c}{set\+Parada\+Erro}} (double \mbox{\hyperlink{class_sistema_nao_linear_a8cc2da006efe8f05404b00684afd90f5}{erro\+Maximo}})
+\begin{DoxyCompactList}\small\item\em Define o erro máximo para parada \end{DoxyCompactList}\item 
+double $\ast$ \mbox{\hyperlink{class_sistema_nao_linear_a2e364a2c7819ad13d1ced937f9fe4e34}{calcular}} (double $\ast$inicial)
+\begin{DoxyCompactList}\small\item\em Calcula a solução do sistema \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sistema_nao_linear_a326d69d417ace1296edb2f30a059ebb9}{set\+Jacobiana}} (double h)
+\begin{DoxyCompactList}\small\item\em Define a diferença h para cálculo das derivadas \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sistema_nao_linear_a7c5fa62b24ba9155fc6a0602b45359e7}{set\+Linear}} (int n\+Iteracao\+Max, double erro\+Max)
+\begin{DoxyCompactList}\small\item\em Define os parâmetros para cálculo do sistema linear \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sistema_nao_linear_a07a5e4f08d46c95231ac377cee4c83ba}{set\+Print}} (bool \mbox{\hyperlink{class_sistema_nao_linear_aae53edefde6c58a49ef3b222996370ec}{print}})
+\begin{DoxyCompactList}\small\item\em Define se deverá printar os valores das iterações \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Membros Privados}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_sistema_nao_linear_adeb6924cf93ef64739eaa88abc98fdd7}{iterar}} ()
+\begin{DoxyCompactList}\small\item\em Calcula a matriz \mbox{\hyperlink{class_jacobiana}{Jacobiana}} \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_sistema_nao_linear_a5dc2a5f2e80b0915f7e5d19da6d0c7c5}{erro}} ()
+\begin{DoxyCompactList}\small\item\em Calcula o erro máximo nas funções \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sistema_nao_linear_ad51e54dc6205d2ace026b8182641149a}{avalia\+Funcoes}} ()
+\begin{DoxyCompactList}\small\item\em Avalia as funções no ponto atual \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sistema_nao_linear_a10c360c321e44e9af8514990cb695cc1}{atualizaX}} ()
+\begin{DoxyCompactList}\small\item\em Atualiza o vetor x\+Atual \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sistema_nao_linear_ab2803ebd15f69c96e7ff20e1230003db}{atualiza\+Jacobiana}} ()
+\begin{DoxyCompactList}\small\item\em Atualiza a matriz \mbox{\hyperlink{class_jacobiana}{Jacobiana}} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sistema_nao_linear_a7d10529f493bfb5e08fa1ea1cd54325c}{printX}} ()
+\begin{DoxyCompactList}\small\item\em Imprime o valor da iteração atual \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Atributos Privados}
+\begin{DoxyCompactItemize}
+\item 
+double $\ast$ \mbox{\hyperlink{class_sistema_nao_linear_a0a8a9a2fc5258873c8890b0808ce54b1}{x\+Atual}}
+\item 
+double $\ast$ \mbox{\hyperlink{class_sistema_nao_linear_a5600eb9fa149cf7732fdaf887b97c6f3}{x\+Anterior}}
+\begin{DoxyCompactList}\small\item\em Solução atual do sistema \end{DoxyCompactList}\item 
+double $\ast$ \mbox{\hyperlink{class_sistema_nao_linear_adec166bcfdc00042ebb2806c24642e4c}{funcao\+PontoN}}
+\begin{DoxyCompactList}\small\item\em Solução anterior do sistema \end{DoxyCompactList}\item 
+double $\ast$ \mbox{\hyperlink{class_sistema_nao_linear_a01b4dcf20e6597664f6b8dc6f0003982}{delta}}
+\begin{DoxyCompactList}\small\item\em Valor da função no ponto atual \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_sistema_nao_linear_ac4d63e1c1cba762d101a36cd98ecdeaf}{n\+Funcao}}
+\begin{DoxyCompactList}\small\item\em Diferença entre x\+Atual e x\+Anterior \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_sistema_nao_linear_a983a6206ff6c389bc3d47a86cfe2dbb6}{n\+Incognita}}
+\begin{DoxyCompactList}\small\item\em Número de funções do sistema \end{DoxyCompactList}\item 
+\mbox{\hyperlink{jacobiana_8h_a4346bb2a285e7c0158191de5fe539946}{Funcao}} $\ast$ \mbox{\hyperlink{class_sistema_nao_linear_af8b27fc4d97b246af06c81648ba88a79}{funcao}}
+\begin{DoxyCompactList}\small\item\em Número de incógnitas do sistema \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_sistema_nao_linear_a81790bb3b38d385f4fa70f07f82bbe73}{n\+Iteracao}}
+\item 
+int \mbox{\hyperlink{class_sistema_nao_linear_afdc1871f9e8372b1a2be7ff04f0c4d40}{n\+Max\+Iteracao}}
+\begin{DoxyCompactList}\small\item\em Índice da iteração atual \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_sistema_nao_linear_a8cc2da006efe8f05404b00684afd90f5}{erro\+Maximo}}
+\begin{DoxyCompactList}\small\item\em Número máximo de iterações \end{DoxyCompactList}\item 
+double $\ast$$\ast$ \mbox{\hyperlink{class_sistema_nao_linear_a30a5bed9d8bbc1f6746a530c5dabf02e}{matriz\+Jacobiana}}
+\begin{DoxyCompactList}\small\item\em Erro máximo nas funções \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_sistema_nao_linear_aae53edefde6c58a49ef3b222996370ec}{print}}
+\begin{DoxyCompactList}\small\item\em Matriz \mbox{\hyperlink{class_jacobiana}{Jacobiana}} atual \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sistema_linear}{Sistema\+Linear}} \mbox{\hyperlink{class_sistema_nao_linear_a01a8e7c0e26a9c20778398941b538e70}{sistema\+Linear}}
+\begin{DoxyCompactList}\small\item\em Armazena a opção de printar os resultados \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_jacobiana}{Jacobiana}} \mbox{\hyperlink{class_sistema_nao_linear_a158f9a40cfdd9e10362e5ecc4f1a893c}{jacobiana}}
+\begin{DoxyCompactList}\small\item\em Resolve o sistema linear \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+Resolve um sistema não linear 
+
+
+
+Definição na linha 13 do arquivo sistema\+Nao\+Linear.\+h.
+
+
+
+\doxysubsection{Construtores e Destrutores}
+\mbox{\Hypertarget{class_sistema_nao_linear_a5d92b4c782a6aa171bd6d86c6306365a}\label{class_sistema_nao_linear_a5d92b4c782a6aa171bd6d86c6306365a}} 
+\index{SistemaNaoLinear@{SistemaNaoLinear}!SistemaNaoLinear@{SistemaNaoLinear}}
+\index{SistemaNaoLinear@{SistemaNaoLinear}!SistemaNaoLinear@{SistemaNaoLinear}}
+\doxysubsubsection{\texorpdfstring{SistemaNaoLinear()}{SistemaNaoLinear()}}
+{\footnotesize\ttfamily Sistema\+Nao\+Linear\+::\+Sistema\+Nao\+Linear (\begin{DoxyParamCaption}\item[{int}]{n\+Funcao,  }\item[{int}]{n\+Incognita }\end{DoxyParamCaption})}
+
+
+
+Construtor 
+
+Calcula o valor absoluto de um n�mero
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em n\+Funcao} & Número de funções do sistema \\
+\hline
+{\em n\+Incognita} & Número de incógnitas do sistema \\
+\hline
+\end{DoxyParams}
+
+
+param name=\char`\"{}x\char`\"{}$>$ N�mero 
+
+returns$>$ Valor absoluto do n�mero 
+
+Definição na linha 24 do arquivo sistema\+Nao\+Linear.\+cpp.
+
+\mbox{\Hypertarget{class_sistema_nao_linear_ab3292a4080b2d272420c742c24f0a228}\label{class_sistema_nao_linear_ab3292a4080b2d272420c742c24f0a228}} 
+\index{SistemaNaoLinear@{SistemaNaoLinear}!````~SistemaNaoLinear@{$\sim$SistemaNaoLinear}}
+\index{````~SistemaNaoLinear@{$\sim$SistemaNaoLinear}!SistemaNaoLinear@{SistemaNaoLinear}}
+\doxysubsubsection{\texorpdfstring{$\sim$SistemaNaoLinear()}{~SistemaNaoLinear()}}
+{\footnotesize\ttfamily Sistema\+Nao\+Linear\+::$\sim$\+Sistema\+Nao\+Linear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definição na linha 41 do arquivo sistema\+Nao\+Linear.\+cpp.
+
+
+
+\doxysubsection{Funções membros}
+\mbox{\Hypertarget{class_sistema_nao_linear_ab2803ebd15f69c96e7ff20e1230003db}\label{class_sistema_nao_linear_ab2803ebd15f69c96e7ff20e1230003db}} 
+\index{SistemaNaoLinear@{SistemaNaoLinear}!atualizaJacobiana@{atualizaJacobiana}}
+\index{atualizaJacobiana@{atualizaJacobiana}!SistemaNaoLinear@{SistemaNaoLinear}}
+\doxysubsubsection{\texorpdfstring{atualizaJacobiana()}{atualizaJacobiana()}}
+{\footnotesize\ttfamily void Sistema\+Nao\+Linear\+::atualiza\+Jacobiana (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Atualiza a matriz \mbox{\hyperlink{class_jacobiana}{Jacobiana}} 
+
+
+
+Definição na linha 158 do arquivo sistema\+Nao\+Linear.\+cpp.
+
+\mbox{\Hypertarget{class_sistema_nao_linear_a10c360c321e44e9af8514990cb695cc1}\label{class_sistema_nao_linear_a10c360c321e44e9af8514990cb695cc1}} 
+\index{SistemaNaoLinear@{SistemaNaoLinear}!atualizaX@{atualizaX}}
+\index{atualizaX@{atualizaX}!SistemaNaoLinear@{SistemaNaoLinear}}
+\doxysubsubsection{\texorpdfstring{atualizaX()}{atualizaX()}}
+{\footnotesize\ttfamily void Sistema\+Nao\+Linear\+::atualizaX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Atualiza o vetor x\+Atual 
+
+
+
+Definição na linha 149 do arquivo sistema\+Nao\+Linear.\+cpp.
+
+\mbox{\Hypertarget{class_sistema_nao_linear_ad51e54dc6205d2ace026b8182641149a}\label{class_sistema_nao_linear_ad51e54dc6205d2ace026b8182641149a}} 
+\index{SistemaNaoLinear@{SistemaNaoLinear}!avaliaFuncoes@{avaliaFuncoes}}
+\index{avaliaFuncoes@{avaliaFuncoes}!SistemaNaoLinear@{SistemaNaoLinear}}
+\doxysubsubsection{\texorpdfstring{avaliaFuncoes()}{avaliaFuncoes()}}
+{\footnotesize\ttfamily void Sistema\+Nao\+Linear\+::avalia\+Funcoes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Avalia as funções no ponto atual 
+
+
+
+Definição na linha 140 do arquivo sistema\+Nao\+Linear.\+cpp.
+
+\mbox{\Hypertarget{class_sistema_nao_linear_a2e364a2c7819ad13d1ced937f9fe4e34}\label{class_sistema_nao_linear_a2e364a2c7819ad13d1ced937f9fe4e34}} 
+\index{SistemaNaoLinear@{SistemaNaoLinear}!calcular@{calcular}}
+\index{calcular@{calcular}!SistemaNaoLinear@{SistemaNaoLinear}}
+\doxysubsubsection{\texorpdfstring{calcular()}{calcular()}}
+{\footnotesize\ttfamily double $\ast$ Sistema\+Nao\+Linear\+::calcular (\begin{DoxyParamCaption}\item[{double $\ast$}]{inicial }\end{DoxyParamCaption})}
+
+
+
+Calcula a solução do sistema 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em inicial} & O valor inicial para o sistema \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+O vetor solução 
+\end{DoxyReturn}
+
+
+Definição na linha 62 do arquivo sistema\+Nao\+Linear.\+cpp.
+
+\mbox{\Hypertarget{class_sistema_nao_linear_a5dc2a5f2e80b0915f7e5d19da6d0c7c5}\label{class_sistema_nao_linear_a5dc2a5f2e80b0915f7e5d19da6d0c7c5}} 
+\index{SistemaNaoLinear@{SistemaNaoLinear}!erro@{erro}}
+\index{erro@{erro}!SistemaNaoLinear@{SistemaNaoLinear}}
+\doxysubsubsection{\texorpdfstring{erro()}{erro()}}
+{\footnotesize\ttfamily double Sistema\+Nao\+Linear\+::erro (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Calcula o erro máximo nas funções 
+
+\begin{DoxyReturn}{Retorna}
+O erro máximo 
+\end{DoxyReturn}
+
+
+Definição na linha 125 do arquivo sistema\+Nao\+Linear.\+cpp.
+
+\mbox{\Hypertarget{class_sistema_nao_linear_aa5c642ec6b4286f6cdfe727107861d34}\label{class_sistema_nao_linear_aa5c642ec6b4286f6cdfe727107861d34}} 
+\index{SistemaNaoLinear@{SistemaNaoLinear}!inserirFuncao@{inserirFuncao}}
+\index{inserirFuncao@{inserirFuncao}!SistemaNaoLinear@{SistemaNaoLinear}}
+\doxysubsubsection{\texorpdfstring{inserirFuncao()}{inserirFuncao()}}
+{\footnotesize\ttfamily void Sistema\+Nao\+Linear\+::inserir\+Funcao (\begin{DoxyParamCaption}\item[{int}]{indice,  }\item[{\mbox{\hyperlink{jacobiana_8h_a4346bb2a285e7c0158191de5fe539946}{Funcao}}}]{funcao }\end{DoxyParamCaption})}
+
+
+
+Define uma das funções do sistema 
+
+A função deve retornar \char`\"{}0\char`\"{} no vetor solução 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em indice} & Índice da função \\
+\hline
+{\em funcao} & Ponteiro para a função \\
+\hline
+\end{DoxyParams}
+
+
+Definição na linha 45 do arquivo sistema\+Nao\+Linear.\+cpp.
+
+\mbox{\Hypertarget{class_sistema_nao_linear_adeb6924cf93ef64739eaa88abc98fdd7}\label{class_sistema_nao_linear_adeb6924cf93ef64739eaa88abc98fdd7}} 
+\index{SistemaNaoLinear@{SistemaNaoLinear}!iterar@{iterar}}
+\index{iterar@{iterar}!SistemaNaoLinear@{SistemaNaoLinear}}
+\doxysubsubsection{\texorpdfstring{iterar()}{iterar()}}
+{\footnotesize\ttfamily void Sistema\+Nao\+Linear\+::iterar (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Calcula a matriz \mbox{\hyperlink{class_jacobiana}{Jacobiana}} 
+
+Realiza uma iteração 
+
+Definição na linha 110 do arquivo sistema\+Nao\+Linear.\+cpp.
+
+\mbox{\Hypertarget{class_sistema_nao_linear_a7d10529f493bfb5e08fa1ea1cd54325c}\label{class_sistema_nao_linear_a7d10529f493bfb5e08fa1ea1cd54325c}} 
+\index{SistemaNaoLinear@{SistemaNaoLinear}!printX@{printX}}
+\index{printX@{printX}!SistemaNaoLinear@{SistemaNaoLinear}}
+\doxysubsubsection{\texorpdfstring{printX()}{printX()}}
+{\footnotesize\ttfamily void Sistema\+Nao\+Linear\+::printX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Imprime o valor da iteração atual 
+
+
+
+Definição na linha 163 do arquivo sistema\+Nao\+Linear.\+cpp.
+
+\mbox{\Hypertarget{class_sistema_nao_linear_a326d69d417ace1296edb2f30a059ebb9}\label{class_sistema_nao_linear_a326d69d417ace1296edb2f30a059ebb9}} 
+\index{SistemaNaoLinear@{SistemaNaoLinear}!setJacobiana@{setJacobiana}}
+\index{setJacobiana@{setJacobiana}!SistemaNaoLinear@{SistemaNaoLinear}}
+\doxysubsubsection{\texorpdfstring{setJacobiana()}{setJacobiana()}}
+{\footnotesize\ttfamily void Sistema\+Nao\+Linear\+::set\+Jacobiana (\begin{DoxyParamCaption}\item[{double}]{h }\end{DoxyParamCaption})}
+
+
+
+Define a diferença h para cálculo das derivadas 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em h} & Diferença \\
+\hline
+\end{DoxyParams}
+
+
+Definição na linha 99 do arquivo sistema\+Nao\+Linear.\+cpp.
+
+\mbox{\Hypertarget{class_sistema_nao_linear_a7c5fa62b24ba9155fc6a0602b45359e7}\label{class_sistema_nao_linear_a7c5fa62b24ba9155fc6a0602b45359e7}} 
+\index{SistemaNaoLinear@{SistemaNaoLinear}!setLinear@{setLinear}}
+\index{setLinear@{setLinear}!SistemaNaoLinear@{SistemaNaoLinear}}
+\doxysubsubsection{\texorpdfstring{setLinear()}{setLinear()}}
+{\footnotesize\ttfamily void Sistema\+Nao\+Linear\+::set\+Linear (\begin{DoxyParamCaption}\item[{int}]{n\+Iteracao\+Max,  }\item[{double}]{erro\+Max }\end{DoxyParamCaption})}
+
+
+
+Define os parâmetros para cálculo do sistema linear 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em n\+Iteracao\+Max} & O número máximo de iterações \\
+\hline
+{\em erro\+Max} & O erro máximo do sistema, 0 para não usar \\
+\hline
+\end{DoxyParams}
+
+
+Definição na linha 104 do arquivo sistema\+Nao\+Linear.\+cpp.
+
+\mbox{\Hypertarget{class_sistema_nao_linear_a05627073c16969176b07fd8b542c489c}\label{class_sistema_nao_linear_a05627073c16969176b07fd8b542c489c}} 
+\index{SistemaNaoLinear@{SistemaNaoLinear}!setParadaErro@{setParadaErro}}
+\index{setParadaErro@{setParadaErro}!SistemaNaoLinear@{SistemaNaoLinear}}
+\doxysubsubsection{\texorpdfstring{setParadaErro()}{setParadaErro()}}
+{\footnotesize\ttfamily void Sistema\+Nao\+Linear\+::set\+Parada\+Erro (\begin{DoxyParamCaption}\item[{double}]{erro\+Maximo }\end{DoxyParamCaption})}
+
+
+
+Define o erro máximo para parada 
+
+Também determina que o algorítmo utilizará esse critério 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em erro\+Maximo} & O erro máximo a ser definido \\
+\hline
+\end{DoxyParams}
+
+
+\char`\"{}0\char`\"{} para não utilizar esse critério 
+
+Definição na linha 57 do arquivo sistema\+Nao\+Linear.\+cpp.
+
+\mbox{\Hypertarget{class_sistema_nao_linear_aaeb448567919626e9a01b072551b7c9b}\label{class_sistema_nao_linear_aaeb448567919626e9a01b072551b7c9b}} 
+\index{SistemaNaoLinear@{SistemaNaoLinear}!setParadaIteracao@{setParadaIteracao}}
+\index{setParadaIteracao@{setParadaIteracao}!SistemaNaoLinear@{SistemaNaoLinear}}
+\doxysubsubsection{\texorpdfstring{setParadaIteracao()}{setParadaIteracao()}}
+{\footnotesize\ttfamily void Sistema\+Nao\+Linear\+::set\+Parada\+Iteracao (\begin{DoxyParamCaption}\item[{int}]{n\+Max\+Iteracao }\end{DoxyParamCaption})}
+
+
+
+Define o número máximo de iterações 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em n\+Max\+Iteracao} & O número máximo de iterações \\
+\hline
+\end{DoxyParams}
+
+
+Definição na linha 52 do arquivo sistema\+Nao\+Linear.\+cpp.
+
+\mbox{\Hypertarget{class_sistema_nao_linear_a07a5e4f08d46c95231ac377cee4c83ba}\label{class_sistema_nao_linear_a07a5e4f08d46c95231ac377cee4c83ba}} 
+\index{SistemaNaoLinear@{SistemaNaoLinear}!setPrint@{setPrint}}
+\index{setPrint@{setPrint}!SistemaNaoLinear@{SistemaNaoLinear}}
+\doxysubsubsection{\texorpdfstring{setPrint()}{setPrint()}}
+{\footnotesize\ttfamily void Sistema\+Nao\+Linear\+::set\+Print (\begin{DoxyParamCaption}\item[{bool}]{print }\end{DoxyParamCaption})}
+
+
+
+Define se deverá printar os valores das iterações 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em print} & True se deverá printar, false caso contrário \\
+\hline
+\end{DoxyParams}
+
+
+Definição na linha 172 do arquivo sistema\+Nao\+Linear.\+cpp.
+
+
+
+\doxysubsection{Atributos}
+\mbox{\Hypertarget{class_sistema_nao_linear_a01b4dcf20e6597664f6b8dc6f0003982}\label{class_sistema_nao_linear_a01b4dcf20e6597664f6b8dc6f0003982}} 
+\index{SistemaNaoLinear@{SistemaNaoLinear}!delta@{delta}}
+\index{delta@{delta}!SistemaNaoLinear@{SistemaNaoLinear}}
+\doxysubsubsection{\texorpdfstring{delta}{delta}}
+{\footnotesize\ttfamily double$\ast$ Sistema\+Nao\+Linear\+::delta\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Valor da função no ponto atual 
+
+
+
+Definição na linha 19 do arquivo sistema\+Nao\+Linear.\+h.
+
+\mbox{\Hypertarget{class_sistema_nao_linear_a8cc2da006efe8f05404b00684afd90f5}\label{class_sistema_nao_linear_a8cc2da006efe8f05404b00684afd90f5}} 
+\index{SistemaNaoLinear@{SistemaNaoLinear}!erroMaximo@{erroMaximo}}
+\index{erroMaximo@{erroMaximo}!SistemaNaoLinear@{SistemaNaoLinear}}
+\doxysubsubsection{\texorpdfstring{erroMaximo}{erroMaximo}}
+{\footnotesize\ttfamily double Sistema\+Nao\+Linear\+::erro\+Maximo\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Número máximo de iterações 
+
+
+
+Definição na linha 30 do arquivo sistema\+Nao\+Linear.\+h.
+
+\mbox{\Hypertarget{class_sistema_nao_linear_af8b27fc4d97b246af06c81648ba88a79}\label{class_sistema_nao_linear_af8b27fc4d97b246af06c81648ba88a79}} 
+\index{SistemaNaoLinear@{SistemaNaoLinear}!funcao@{funcao}}
+\index{funcao@{funcao}!SistemaNaoLinear@{SistemaNaoLinear}}
+\doxysubsubsection{\texorpdfstring{funcao}{funcao}}
+{\footnotesize\ttfamily \mbox{\hyperlink{jacobiana_8h_a4346bb2a285e7c0158191de5fe539946}{Funcao}}$\ast$ Sistema\+Nao\+Linear\+::funcao\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Número de incógnitas do sistema 
+
+Vetor de funções 
+
+Devem retorna \char`\"{}0\char`\"{} no vetor solução 
+
+Definição na linha 26 do arquivo sistema\+Nao\+Linear.\+h.
+
+\mbox{\Hypertarget{class_sistema_nao_linear_adec166bcfdc00042ebb2806c24642e4c}\label{class_sistema_nao_linear_adec166bcfdc00042ebb2806c24642e4c}} 
+\index{SistemaNaoLinear@{SistemaNaoLinear}!funcaoPontoN@{funcaoPontoN}}
+\index{funcaoPontoN@{funcaoPontoN}!SistemaNaoLinear@{SistemaNaoLinear}}
+\doxysubsubsection{\texorpdfstring{funcaoPontoN}{funcaoPontoN}}
+{\footnotesize\ttfamily double$\ast$ Sistema\+Nao\+Linear\+::funcao\+PontoN\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Solução anterior do sistema 
+
+
+
+Definição na linha 18 do arquivo sistema\+Nao\+Linear.\+h.
+
+\mbox{\Hypertarget{class_sistema_nao_linear_a158f9a40cfdd9e10362e5ecc4f1a893c}\label{class_sistema_nao_linear_a158f9a40cfdd9e10362e5ecc4f1a893c}} 
+\index{SistemaNaoLinear@{SistemaNaoLinear}!jacobiana@{jacobiana}}
+\index{jacobiana@{jacobiana}!SistemaNaoLinear@{SistemaNaoLinear}}
+\doxysubsubsection{\texorpdfstring{jacobiana}{jacobiana}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_jacobiana}{Jacobiana}} Sistema\+Nao\+Linear\+::jacobiana\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Resolve o sistema linear 
+
+
+
+Definição na linha 35 do arquivo sistema\+Nao\+Linear.\+h.
+
+\mbox{\Hypertarget{class_sistema_nao_linear_a30a5bed9d8bbc1f6746a530c5dabf02e}\label{class_sistema_nao_linear_a30a5bed9d8bbc1f6746a530c5dabf02e}} 
+\index{SistemaNaoLinear@{SistemaNaoLinear}!matrizJacobiana@{matrizJacobiana}}
+\index{matrizJacobiana@{matrizJacobiana}!SistemaNaoLinear@{SistemaNaoLinear}}
+\doxysubsubsection{\texorpdfstring{matrizJacobiana}{matrizJacobiana}}
+{\footnotesize\ttfamily double$\ast$$\ast$ Sistema\+Nao\+Linear\+::matriz\+Jacobiana\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Erro máximo nas funções 
+
+
+
+Definição na linha 31 do arquivo sistema\+Nao\+Linear.\+h.
+
+\mbox{\Hypertarget{class_sistema_nao_linear_ac4d63e1c1cba762d101a36cd98ecdeaf}\label{class_sistema_nao_linear_ac4d63e1c1cba762d101a36cd98ecdeaf}} 
+\index{SistemaNaoLinear@{SistemaNaoLinear}!nFuncao@{nFuncao}}
+\index{nFuncao@{nFuncao}!SistemaNaoLinear@{SistemaNaoLinear}}
+\doxysubsubsection{\texorpdfstring{nFuncao}{nFuncao}}
+{\footnotesize\ttfamily int Sistema\+Nao\+Linear\+::n\+Funcao\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Diferença entre x\+Atual e x\+Anterior 
+
+
+
+Definição na linha 21 do arquivo sistema\+Nao\+Linear.\+h.
+
+\mbox{\Hypertarget{class_sistema_nao_linear_a983a6206ff6c389bc3d47a86cfe2dbb6}\label{class_sistema_nao_linear_a983a6206ff6c389bc3d47a86cfe2dbb6}} 
+\index{SistemaNaoLinear@{SistemaNaoLinear}!nIncognita@{nIncognita}}
+\index{nIncognita@{nIncognita}!SistemaNaoLinear@{SistemaNaoLinear}}
+\doxysubsubsection{\texorpdfstring{nIncognita}{nIncognita}}
+{\footnotesize\ttfamily int Sistema\+Nao\+Linear\+::n\+Incognita\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Número de funções do sistema 
+
+
+
+Definição na linha 21 do arquivo sistema\+Nao\+Linear.\+h.
+
+\mbox{\Hypertarget{class_sistema_nao_linear_a81790bb3b38d385f4fa70f07f82bbe73}\label{class_sistema_nao_linear_a81790bb3b38d385f4fa70f07f82bbe73}} 
+\index{SistemaNaoLinear@{SistemaNaoLinear}!nIteracao@{nIteracao}}
+\index{nIteracao@{nIteracao}!SistemaNaoLinear@{SistemaNaoLinear}}
+\doxysubsubsection{\texorpdfstring{nIteracao}{nIteracao}}
+{\footnotesize\ttfamily int Sistema\+Nao\+Linear\+::n\+Iteracao\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definição na linha 28 do arquivo sistema\+Nao\+Linear.\+h.
+
+\mbox{\Hypertarget{class_sistema_nao_linear_afdc1871f9e8372b1a2be7ff04f0c4d40}\label{class_sistema_nao_linear_afdc1871f9e8372b1a2be7ff04f0c4d40}} 
+\index{SistemaNaoLinear@{SistemaNaoLinear}!nMaxIteracao@{nMaxIteracao}}
+\index{nMaxIteracao@{nMaxIteracao}!SistemaNaoLinear@{SistemaNaoLinear}}
+\doxysubsubsection{\texorpdfstring{nMaxIteracao}{nMaxIteracao}}
+{\footnotesize\ttfamily int Sistema\+Nao\+Linear\+::n\+Max\+Iteracao\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Índice da iteração atual 
+
+
+
+Definição na linha 29 do arquivo sistema\+Nao\+Linear.\+h.
+
+\mbox{\Hypertarget{class_sistema_nao_linear_aae53edefde6c58a49ef3b222996370ec}\label{class_sistema_nao_linear_aae53edefde6c58a49ef3b222996370ec}} 
+\index{SistemaNaoLinear@{SistemaNaoLinear}!print@{print}}
+\index{print@{print}!SistemaNaoLinear@{SistemaNaoLinear}}
+\doxysubsubsection{\texorpdfstring{print}{print}}
+{\footnotesize\ttfamily bool Sistema\+Nao\+Linear\+::print\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Matriz \mbox{\hyperlink{class_jacobiana}{Jacobiana}} atual 
+
+
+
+Definição na linha 32 do arquivo sistema\+Nao\+Linear.\+h.
+
+\mbox{\Hypertarget{class_sistema_nao_linear_a01a8e7c0e26a9c20778398941b538e70}\label{class_sistema_nao_linear_a01a8e7c0e26a9c20778398941b538e70}} 
+\index{SistemaNaoLinear@{SistemaNaoLinear}!sistemaLinear@{sistemaLinear}}
+\index{sistemaLinear@{sistemaLinear}!SistemaNaoLinear@{SistemaNaoLinear}}
+\doxysubsubsection{\texorpdfstring{sistemaLinear}{sistemaLinear}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sistema_linear}{Sistema\+Linear}} Sistema\+Nao\+Linear\+::sistema\+Linear\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Armazena a opção de printar os resultados 
+
+
+
+Definição na linha 34 do arquivo sistema\+Nao\+Linear.\+h.
+
+\mbox{\Hypertarget{class_sistema_nao_linear_a5600eb9fa149cf7732fdaf887b97c6f3}\label{class_sistema_nao_linear_a5600eb9fa149cf7732fdaf887b97c6f3}} 
+\index{SistemaNaoLinear@{SistemaNaoLinear}!xAnterior@{xAnterior}}
+\index{xAnterior@{xAnterior}!SistemaNaoLinear@{SistemaNaoLinear}}
+\doxysubsubsection{\texorpdfstring{xAnterior}{xAnterior}}
+{\footnotesize\ttfamily double$\ast$ Sistema\+Nao\+Linear\+::x\+Anterior\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Solução atual do sistema 
+
+
+
+Definição na linha 17 do arquivo sistema\+Nao\+Linear.\+h.
+
+\mbox{\Hypertarget{class_sistema_nao_linear_a0a8a9a2fc5258873c8890b0808ce54b1}\label{class_sistema_nao_linear_a0a8a9a2fc5258873c8890b0808ce54b1}} 
+\index{SistemaNaoLinear@{SistemaNaoLinear}!xAtual@{xAtual}}
+\index{xAtual@{xAtual}!SistemaNaoLinear@{SistemaNaoLinear}}
+\doxysubsubsection{\texorpdfstring{xAtual}{xAtual}}
+{\footnotesize\ttfamily double$\ast$ Sistema\+Nao\+Linear\+::x\+Atual\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definição na linha 16 do arquivo sistema\+Nao\+Linear.\+h.
+
+
+
+A documentação para essa classe foi gerada a partir dos seguintes arquivos\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Elton/source/\+Repos/\+Projeto-\/\+Sistema\+Não\+Linear-\/\+M\+S211/\+Projeto-\/\+Sistema\+Não\+Linear-\/\+M\+S211/\mbox{\hyperlink{sistema_nao_linear_8h}{sistema\+Nao\+Linear.\+h}}\item 
+C\+:/\+Users/\+Elton/source/\+Repos/\+Projeto-\/\+Sistema\+Não\+Linear-\/\+M\+S211/\+Projeto-\/\+Sistema\+Não\+Linear-\/\+M\+S211/\mbox{\hyperlink{sistema_nao_linear_8cpp}{sistema\+Nao\+Linear.\+cpp}}\end{DoxyCompactItemize}

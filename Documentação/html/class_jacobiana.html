@@ -1,0 +1,447 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.16"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Método de Newton para Sistemas Não Lineares: Referência da Classe Jacobiana</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Método de Newton para Sistemas Não Lineares
+   </div>
+   <div id="projectbrief">Projeto realizado para a disciplina MS211 - IMECC/Unicamp - Maicon 2019</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.16 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Busca');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Membros Públicos</a> &#124;
+<a href="#pri-methods">Membros Privados</a> &#124;
+<a href="#pri-attribs">Atributos Privados</a> &#124;
+<a href="class_jacobiana-members.html">Lista de todos os Membros</a>  </div>
+  <div class="headertitle">
+<div class="title">Referência da Classe Jacobiana</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Implementa o cálculo de uma matriz <a class="el" href="class_jacobiana.html" title="Implementa o cálculo de uma matriz Jacobiana, aproximando as derivadas">Jacobiana</a>, aproximando as derivadas  
+ <a href="class_jacobiana.html#details">Mais...</a></p>
+
+<p><code>#include &lt;<a class="el" href="jacobiana_8h_source.html">jacobiana.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Membros Públicos</h2></td></tr>
+<tr class="memitem:a2169198da9a0a6dc3beb636f323788d5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_jacobiana.html#a2169198da9a0a6dc3beb636f323788d5">Jacobiana</a> (int <a class="el" href="class_jacobiana.html#a65b6bcec9fb7b3d10e65b5f5c22e37ec">nFuncao</a>, int <a class="el" href="class_jacobiana.html#aa17316698596f09865712f2b7baf99f0">nIncognita</a>)</td></tr>
+<tr class="memdesc:a2169198da9a0a6dc3beb636f323788d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construtor  <a href="class_jacobiana.html#a2169198da9a0a6dc3beb636f323788d5">Mais...</a><br /></td></tr>
+<tr class="separator:a2169198da9a0a6dc3beb636f323788d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0fcc0ccdc5cc3e212836ba2540e9b55"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_jacobiana.html#af0fcc0ccdc5cc3e212836ba2540e9b55">~Jacobiana</a> ()</td></tr>
+<tr class="separator:af0fcc0ccdc5cc3e212836ba2540e9b55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9dede31136209d81b2cffc7e4e2bd3c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_jacobiana.html#ab9dede31136209d81b2cffc7e4e2bd3c">inserirFuncao</a> (int indice, <a class="el" href="jacobiana_8h.html#a4346bb2a285e7c0158191de5fe539946">Funcao</a> <a class="el" href="class_jacobiana.html#a88ec34771a90f1cfecbe01ea905c17ee">funcao</a>)</td></tr>
+<tr class="memdesc:ab9dede31136209d81b2cffc7e4e2bd3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insere uma função para cálculo  <a href="class_jacobiana.html#ab9dede31136209d81b2cffc7e4e2bd3c">Mais...</a><br /></td></tr>
+<tr class="separator:ab9dede31136209d81b2cffc7e4e2bd3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef447c9d162bebe31671d83202c6134b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_jacobiana.html#aef447c9d162bebe31671d83202c6134b">setH</a> (double <a class="el" href="class_jacobiana.html#a32fb72d7bc9c297459ae34bf60dfe6bb">h</a>)</td></tr>
+<tr class="memdesc:aef447c9d162bebe31671d83202c6134b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define a diferença h para cálculo das derivadas  <a href="class_jacobiana.html#aef447c9d162bebe31671d83202c6134b">Mais...</a><br /></td></tr>
+<tr class="separator:aef447c9d162bebe31671d83202c6134b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac624911d25ceb62e52f1ac19085d1057"><td class="memItemLeft" align="right" valign="top">double **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_jacobiana.html#ac624911d25ceb62e52f1ac19085d1057">avaliar</a> (double *x)</td></tr>
+<tr class="memdesc:ac624911d25ceb62e52f1ac19085d1057"><td class="mdescLeft">&#160;</td><td class="mdescRight">Avalia a matriz em um ponto  <a href="class_jacobiana.html#ac624911d25ceb62e52f1ac19085d1057">Mais...</a><br /></td></tr>
+<tr class="separator:ac624911d25ceb62e52f1ac19085d1057"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Membros Privados</h2></td></tr>
+<tr class="memitem:ae968611cb3658318cfda6fd7b27e6bdc"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_jacobiana.html#ae968611cb3658318cfda6fd7b27e6bdc">calculaDerivada</a> (int indiceFuncao, int indiceX, double *x)</td></tr>
+<tr class="memdesc:ae968611cb3658318cfda6fd7b27e6bdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Número de variáveis das funções  <a href="class_jacobiana.html#ae968611cb3658318cfda6fd7b27e6bdc">Mais...</a><br /></td></tr>
+<tr class="separator:ae968611cb3658318cfda6fd7b27e6bdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Atributos Privados</h2></td></tr>
+<tr class="memitem:a88ec34771a90f1cfecbe01ea905c17ee"><td class="memItemLeft" align="right" valign="top"><a class="el" href="jacobiana_8h.html#a4346bb2a285e7c0158191de5fe539946">Funcao</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_jacobiana.html#a88ec34771a90f1cfecbe01ea905c17ee">funcao</a></td></tr>
+<tr class="separator:a88ec34771a90f1cfecbe01ea905c17ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32fb72d7bc9c297459ae34bf60dfe6bb"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_jacobiana.html#a32fb72d7bc9c297459ae34bf60dfe6bb">h</a></td></tr>
+<tr class="memdesc:a32fb72d7bc9c297459ae34bf60dfe6bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vetor de funções  <a href="class_jacobiana.html#a32fb72d7bc9c297459ae34bf60dfe6bb">Mais...</a><br /></td></tr>
+<tr class="separator:a32fb72d7bc9c297459ae34bf60dfe6bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65b6bcec9fb7b3d10e65b5f5c22e37ec"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_jacobiana.html#a65b6bcec9fb7b3d10e65b5f5c22e37ec">nFuncao</a></td></tr>
+<tr class="separator:a65b6bcec9fb7b3d10e65b5f5c22e37ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa17316698596f09865712f2b7baf99f0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_jacobiana.html#aa17316698596f09865712f2b7baf99f0">nIncognita</a></td></tr>
+<tr class="memdesc:aa17316698596f09865712f2b7baf99f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Número de funções no vetor  <a href="class_jacobiana.html#aa17316698596f09865712f2b7baf99f0">Mais...</a><br /></td></tr>
+<tr class="separator:aa17316698596f09865712f2b7baf99f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
+<div class="textblock"><p>Implementa o cálculo de uma matriz <a class="el" href="class_jacobiana.html" title="Implementa o cálculo de uma matriz Jacobiana, aproximando as derivadas">Jacobiana</a>, aproximando as derivadas </p>
+<p>Aproxima a derivada considerando uma diferença h </p>
+
+<p class="definition">Definição na linha <a class="el" href="jacobiana_8h_source.html#l00011">11</a> do arquivo <a class="el" href="jacobiana_8h_source.html">jacobiana.h</a>.</p>
+</div><h2 class="groupheader">Construtores e Destrutores</h2>
+<a id="a2169198da9a0a6dc3beb636f323788d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2169198da9a0a6dc3beb636f323788d5">&#9670;&nbsp;</a></span>Jacobiana()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Jacobiana::Jacobiana </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nFuncao</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nIncognita</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construtor </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nFuncao</td><td>Número de funções </td></tr>
+    <tr><td class="paramname">nIncognita</td><td>Número de incognitas </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definição na linha <a class="el" href="jacobiana_8cpp_source.html#l00006">6</a> do arquivo <a class="el" href="jacobiana_8cpp_source.html">jacobiana.cpp</a>.</p>
+
+</div>
+</div>
+<a id="af0fcc0ccdc5cc3e212836ba2540e9b55"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0fcc0ccdc5cc3e212836ba2540e9b55">&#9670;&nbsp;</a></span>~Jacobiana()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Jacobiana::~Jacobiana </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="jacobiana_8cpp_source.html#l00015">15</a> do arquivo <a class="el" href="jacobiana_8cpp_source.html">jacobiana.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Funções membros</h2>
+<a id="ac624911d25ceb62e52f1ac19085d1057"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac624911d25ceb62e52f1ac19085d1057">&#9670;&nbsp;</a></span>avaliar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double ** Jacobiana::avaliar </td>
+          <td>(</td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Avalia a matriz em um ponto </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>Vetor em análise </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>A matriz calculada </dd></dl>
+
+<p class="definition">Definição na linha <a class="el" href="jacobiana_8cpp_source.html#l00050">50</a> do arquivo <a class="el" href="jacobiana_8cpp_source.html">jacobiana.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ae968611cb3658318cfda6fd7b27e6bdc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae968611cb3658318cfda6fd7b27e6bdc">&#9670;&nbsp;</a></span>calculaDerivada()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Jacobiana::calculaDerivada </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>indiceFuncao</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>indiceX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Número de variáveis das funções </p>
+<p>Calcula um valor de derivada </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">indiceFuncao</td><td>Índice da função a ser avaliada </td></tr>
+    <tr><td class="paramname">indiceX</td><td>Índice da variável em análise </td></tr>
+    <tr><td class="paramname">x</td><td>Vetor das variáveis </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>Valor da derivada calculada </dd></dl>
+
+<p class="definition">Definição na linha <a class="el" href="jacobiana_8cpp_source.html#l00024">24</a> do arquivo <a class="el" href="jacobiana_8cpp_source.html">jacobiana.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ab9dede31136209d81b2cffc7e4e2bd3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9dede31136209d81b2cffc7e4e2bd3c">&#9670;&nbsp;</a></span>inserirFuncao()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Jacobiana::inserirFuncao </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>indice</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="jacobiana_8h.html#a4346bb2a285e7c0158191de5fe539946">Funcao</a>&#160;</td>
+          <td class="paramname"><em>funcao</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Insere uma função para cálculo </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">indice</td><td>Índice da função sendo analisada </td></tr>
+    <tr><td class="paramname">funcao</td><td>Ponteiro para a função </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definição na linha <a class="el" href="jacobiana_8cpp_source.html#l00019">19</a> do arquivo <a class="el" href="jacobiana_8cpp_source.html">jacobiana.cpp</a>.</p>
+
+</div>
+</div>
+<a id="aef447c9d162bebe31671d83202c6134b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef447c9d162bebe31671d83202c6134b">&#9670;&nbsp;</a></span>setH()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Jacobiana::setH </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>h</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Define a diferença h para cálculo das derivadas </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">h</td><td>Diferença h sendo inserida </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definição na linha <a class="el" href="jacobiana_8cpp_source.html#l00045">45</a> do arquivo <a class="el" href="jacobiana_8cpp_source.html">jacobiana.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Atributos</h2>
+<a id="a88ec34771a90f1cfecbe01ea905c17ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88ec34771a90f1cfecbe01ea905c17ee">&#9670;&nbsp;</a></span>funcao</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="jacobiana_8h.html#a4346bb2a285e7c0158191de5fe539946">Funcao</a>* Jacobiana::funcao</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="jacobiana_8h_source.html#l00015">15</a> do arquivo <a class="el" href="jacobiana_8h_source.html">jacobiana.h</a>.</p>
+
+</div>
+</div>
+<a id="a32fb72d7bc9c297459ae34bf60dfe6bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32fb72d7bc9c297459ae34bf60dfe6bb">&#9670;&nbsp;</a></span>h</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Jacobiana::h</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Vetor de funções </p>
+<p>Diferença a ser utilizada </p>
+
+<p class="definition">Definição na linha <a class="el" href="jacobiana_8h_source.html#l00018">18</a> do arquivo <a class="el" href="jacobiana_8h_source.html">jacobiana.h</a>.</p>
+
+</div>
+</div>
+<a id="a65b6bcec9fb7b3d10e65b5f5c22e37ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65b6bcec9fb7b3d10e65b5f5c22e37ec">&#9670;&nbsp;</a></span>nFuncao</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Jacobiana::nFuncao</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="jacobiana_8h_source.html#l00019">19</a> do arquivo <a class="el" href="jacobiana_8h_source.html">jacobiana.h</a>.</p>
+
+</div>
+</div>
+<a id="aa17316698596f09865712f2b7baf99f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa17316698596f09865712f2b7baf99f0">&#9670;&nbsp;</a></span>nIncognita</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Jacobiana::nIncognita</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Número de funções no vetor </p>
+
+<p class="definition">Definição na linha <a class="el" href="jacobiana_8h_source.html#l00019">19</a> do arquivo <a class="el" href="jacobiana_8h_source.html">jacobiana.h</a>.</p>
+
+</div>
+</div>
+<hr/>A documentação para essa classe foi gerada a partir dos seguintes arquivos:<ul>
+<li>C:/Users/Elton/source/Repos/Projeto-SistemaNãoLinear-MS211/Projeto-SistemaNãoLinear-MS211/<a class="el" href="jacobiana_8h_source.html">jacobiana.h</a></li>
+<li>C:/Users/Elton/source/Repos/Projeto-SistemaNãoLinear-MS211/Projeto-SistemaNãoLinear-MS211/<a class="el" href="jacobiana_8cpp_source.html">jacobiana.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.16
+</small></address>
+</body>
+</html>

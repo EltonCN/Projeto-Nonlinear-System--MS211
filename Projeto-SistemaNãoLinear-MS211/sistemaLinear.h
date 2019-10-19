@@ -1,63 +1,60 @@
 #pragma once
 
-//LUx = b, Ux = Y, LY= b 
-//
-
-///<summary> Implementa a resolução de sistemas lineares </summary>
-///<remarks> <para> Utiliza o métode de Gauss-Jacobi </para>
-///<para> Quando não possível, utiliza fatoração LU </para></remarks>
+/// <summary> Implementa a resoluÃ§Ã£o de sistemas lineares </summary>
+/// <remarks> Utiliza o mÃ©todo de de Gauss-Jacobi </remarks> 
 class SistemaLinear
 {
 	private:
-		int nIteracao; ///<value> Índice da iteração atual </value>
-		int nMaxIteracao; ///<value> Número máximo de iterações </value>
-		double erroMaximo; ///<value> Erro máximo nas funções </value>
+		int nIteracao; /// <value> Ãndice da iteraÃ§Ã£o atual </value>
+		int nMaxIteracao; /// <value> NÃºmero mÃ¡ximo de iteraÃ§Ãµes </value>
+		double erroMaximo; /// <value> Erro mÃ¡ximo nas funÃ§Ãµes </value>
 
-		int nEquacao;///<value> O número de equações do sistema </value>
-		int *permutado;
+		int nEquacao;/// <value> O nÃºmero de equaÃ§Ãµes do sistema </value>
 
-		double** m; ///<value> A matriz de coeficientes </value>
-		double* b; ///<value> O vetor dos termos independentes </value>
+		double** m; /// <value> A matriz de coeficientes </value>
+		double* b; /// <value> O vetor dos termos independentes </value>
 		
-		double* xAnt; ///<value> Solução anterior </value>
-		double* xAtual; ///<value> Soluçaõ atual </value>
+		double* xAnt; /// <value> SoluÃ§Ã£o anterior </value>
+		double* xAtual; /// <value> SoluÃ§aÃµ atual </value>
 
-		///<summary> Realiza uma iteração </summary>
+		/// <summary> Realiza uma iteraÃ§Ã£o </summary>
 		void iterar();
 
-		///<summary> Calcula o erro máximo nas funções </summary>
-		///<returns> O erro máximo </return>
+		/// <summary> Calcula o erro mÃ¡ximo nas funÃ§Ãµes </summary>
+		/// <returns> O erro mÃ¡ximo </returns>
 		double erro();
 
 	public:
+		/// <summary> Construtor da classe </summary>
+		/// <param name="nEquacao"> O nÃºmero de equaÃ§Ãµes do sistema </param>
 		SistemaLinear(int nEquacao);
 		~SistemaLinear();
 
-		///<summary> Define o número máximo de iterações </summary>
-		///<param name="nMaxIteracao"> O número máximo de iterações </param>
+		/// <summary> Define o nÃºmero mÃ¡ximo de iteraÃ§Ãµes </summary>
+		/// <param name="nMaxIteracao"> O nÃºmero mÃ¡ximo de iteraÃ§Ãµes </param>
 		void setParadaIteracao(int nMaxIteracao);
 
-		///<summary> Define o erro máximo para parada </summary>
-		///<remarks> Também determina que o algorítmo utilizará esse critério </remarks>
-		///<param name="erroMaximo"> O erro máximo a ser definido </param>
-		///<remaks> "0" para não utilizar esse critério </remarks>
+		/// <summary> Define o erro mÃ¡ximo para parada </summary>
+		/// <remarks> TambÃ©m determina que o algorÃ­tmo utilizarÃ¡ esse critÃ©rio </remarks>
+		/// <param name="erroMaximo"> O erro mÃ¡ximo a ser definido </param>
+		/// <remarks> "0" para nÃ£o utilizar esse critÃ©rio </remarks>
 		void setParadaErro(double erroMaximo);
 
-		///<summary> Insere a matriz de coeficientes </summary>
-		///<param name="matrizCoeficientes"> A matriz de coeficientes </param>
+		/// <summary> Insere a matriz de coeficientes </summary>
+		/// <param name="matrizCoeficientes"> A matriz de coeficientes </param>
 		void inserirMatriz(double** matrizCoeficientes);
 
-		///<summary> Insere o vetor de termos independentes </summary>
-		///<param name="fonte"> Vetor </param>
+		/// <summary> Insere o vetor de termos independentes </summary>
+		/// <param name="fonte"> Vetor </param>
 		void inserirTermoFonte(double* fonte);
 
-		///<summary> Calcula a solução do sistema </summary>
-		///<returns> O vetor solução </returns>
+		/// <summary> Calcula a soluÃ§Ã£o do sistema </summary>
+		/// <returns> O vetor soluÃ§Ã£o </returns>
 		double* calcular();
 
-		///<summary> Calcula a solução do sistema </summary>
-		///<param name="inicial"> Valor inicial </param>
-		///<returns> O vetor solução </returns>
+		/// <summary> Calcula a soluÃ§Ã£o do sistema </summary>
+		/// <param name="inicial"> Valor inicial </param>
+		/// <returns> O vetor soluÃ§Ã£o </returns>
 		double* calcular(double* inicial);
 };
 

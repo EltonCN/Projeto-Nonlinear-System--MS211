@@ -1,0 +1,233 @@
+\hypertarget{class_jacobiana}{}\doxysection{Referência da Classe Jacobiana}
+\label{class_jacobiana}\index{Jacobiana@{Jacobiana}}
+
+
+Implementa o cálculo de uma matriz \mbox{\hyperlink{class_jacobiana}{Jacobiana}}, aproximando as derivadas  
+
+
+
+
+{\ttfamily \#include $<$jacobiana.\+h$>$}
+
+\doxysubsection*{Membros Públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_jacobiana_a2169198da9a0a6dc3beb636f323788d5}{Jacobiana}} (int \mbox{\hyperlink{class_jacobiana_a65b6bcec9fb7b3d10e65b5f5c22e37ec}{n\+Funcao}}, int \mbox{\hyperlink{class_jacobiana_aa17316698596f09865712f2b7baf99f0}{n\+Incognita}})
+\begin{DoxyCompactList}\small\item\em Construtor \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_jacobiana_af0fcc0ccdc5cc3e212836ba2540e9b55}{$\sim$\+Jacobiana}} ()
+\item 
+void \mbox{\hyperlink{class_jacobiana_ab9dede31136209d81b2cffc7e4e2bd3c}{inserir\+Funcao}} (int indice, \mbox{\hyperlink{jacobiana_8h_a4346bb2a285e7c0158191de5fe539946}{Funcao}} \mbox{\hyperlink{class_jacobiana_a88ec34771a90f1cfecbe01ea905c17ee}{funcao}})
+\begin{DoxyCompactList}\small\item\em Insere uma função para cálculo \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_jacobiana_aef447c9d162bebe31671d83202c6134b}{setH}} (double \mbox{\hyperlink{class_jacobiana_a32fb72d7bc9c297459ae34bf60dfe6bb}{h}})
+\begin{DoxyCompactList}\small\item\em Define a diferença h para cálculo das derivadas \end{DoxyCompactList}\item 
+double $\ast$$\ast$ \mbox{\hyperlink{class_jacobiana_ac624911d25ceb62e52f1ac19085d1057}{avaliar}} (double $\ast$x)
+\begin{DoxyCompactList}\small\item\em Avalia a matriz em um ponto \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Membros Privados}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{class_jacobiana_ae968611cb3658318cfda6fd7b27e6bdc}{calcula\+Derivada}} (int indice\+Funcao, int indiceX, double $\ast$x)
+\begin{DoxyCompactList}\small\item\em Número de variáveis das funções \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Atributos Privados}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{jacobiana_8h_a4346bb2a285e7c0158191de5fe539946}{Funcao}} $\ast$ \mbox{\hyperlink{class_jacobiana_a88ec34771a90f1cfecbe01ea905c17ee}{funcao}}
+\item 
+double \mbox{\hyperlink{class_jacobiana_a32fb72d7bc9c297459ae34bf60dfe6bb}{h}}
+\begin{DoxyCompactList}\small\item\em Vetor de funções \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_jacobiana_a65b6bcec9fb7b3d10e65b5f5c22e37ec}{n\+Funcao}}
+\item 
+int \mbox{\hyperlink{class_jacobiana_aa17316698596f09865712f2b7baf99f0}{n\+Incognita}}
+\begin{DoxyCompactList}\small\item\em Número de funções no vetor \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+Implementa o cálculo de uma matriz \mbox{\hyperlink{class_jacobiana}{Jacobiana}}, aproximando as derivadas 
+
+Aproxima a derivada considerando uma diferença h 
+
+Definição na linha 11 do arquivo jacobiana.\+h.
+
+
+
+\doxysubsection{Construtores e Destrutores}
+\mbox{\Hypertarget{class_jacobiana_a2169198da9a0a6dc3beb636f323788d5}\label{class_jacobiana_a2169198da9a0a6dc3beb636f323788d5}} 
+\index{Jacobiana@{Jacobiana}!Jacobiana@{Jacobiana}}
+\index{Jacobiana@{Jacobiana}!Jacobiana@{Jacobiana}}
+\doxysubsubsection{\texorpdfstring{Jacobiana()}{Jacobiana()}}
+{\footnotesize\ttfamily Jacobiana\+::\+Jacobiana (\begin{DoxyParamCaption}\item[{int}]{n\+Funcao,  }\item[{int}]{n\+Incognita }\end{DoxyParamCaption})}
+
+
+
+Construtor 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em n\+Funcao} & Número de funções \\
+\hline
+{\em n\+Incognita} & Número de incognitas \\
+\hline
+\end{DoxyParams}
+
+
+Definição na linha 6 do arquivo jacobiana.\+cpp.
+
+\mbox{\Hypertarget{class_jacobiana_af0fcc0ccdc5cc3e212836ba2540e9b55}\label{class_jacobiana_af0fcc0ccdc5cc3e212836ba2540e9b55}} 
+\index{Jacobiana@{Jacobiana}!````~Jacobiana@{$\sim$Jacobiana}}
+\index{````~Jacobiana@{$\sim$Jacobiana}!Jacobiana@{Jacobiana}}
+\doxysubsubsection{\texorpdfstring{$\sim$Jacobiana()}{~Jacobiana()}}
+{\footnotesize\ttfamily Jacobiana\+::$\sim$\+Jacobiana (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definição na linha 15 do arquivo jacobiana.\+cpp.
+
+
+
+\doxysubsection{Funções membros}
+\mbox{\Hypertarget{class_jacobiana_ac624911d25ceb62e52f1ac19085d1057}\label{class_jacobiana_ac624911d25ceb62e52f1ac19085d1057}} 
+\index{Jacobiana@{Jacobiana}!avaliar@{avaliar}}
+\index{avaliar@{avaliar}!Jacobiana@{Jacobiana}}
+\doxysubsubsection{\texorpdfstring{avaliar()}{avaliar()}}
+{\footnotesize\ttfamily double $\ast$$\ast$ Jacobiana\+::avaliar (\begin{DoxyParamCaption}\item[{double $\ast$}]{x }\end{DoxyParamCaption})}
+
+
+
+Avalia a matriz em um ponto 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em x} & Vetor em análise \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+A matriz calculada 
+\end{DoxyReturn}
+
+
+Definição na linha 50 do arquivo jacobiana.\+cpp.
+
+\mbox{\Hypertarget{class_jacobiana_ae968611cb3658318cfda6fd7b27e6bdc}\label{class_jacobiana_ae968611cb3658318cfda6fd7b27e6bdc}} 
+\index{Jacobiana@{Jacobiana}!calculaDerivada@{calculaDerivada}}
+\index{calculaDerivada@{calculaDerivada}!Jacobiana@{Jacobiana}}
+\doxysubsubsection{\texorpdfstring{calculaDerivada()}{calculaDerivada()}}
+{\footnotesize\ttfamily double Jacobiana\+::calcula\+Derivada (\begin{DoxyParamCaption}\item[{int}]{indice\+Funcao,  }\item[{int}]{indiceX,  }\item[{double $\ast$}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Número de variáveis das funções 
+
+Calcula um valor de derivada 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em indice\+Funcao} & Índice da função a ser avaliada \\
+\hline
+{\em indiceX} & Índice da variável em análise \\
+\hline
+{\em x} & Vetor das variáveis \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Valor da derivada calculada 
+\end{DoxyReturn}
+
+
+Definição na linha 24 do arquivo jacobiana.\+cpp.
+
+\mbox{\Hypertarget{class_jacobiana_ab9dede31136209d81b2cffc7e4e2bd3c}\label{class_jacobiana_ab9dede31136209d81b2cffc7e4e2bd3c}} 
+\index{Jacobiana@{Jacobiana}!inserirFuncao@{inserirFuncao}}
+\index{inserirFuncao@{inserirFuncao}!Jacobiana@{Jacobiana}}
+\doxysubsubsection{\texorpdfstring{inserirFuncao()}{inserirFuncao()}}
+{\footnotesize\ttfamily void Jacobiana\+::inserir\+Funcao (\begin{DoxyParamCaption}\item[{int}]{indice,  }\item[{\mbox{\hyperlink{jacobiana_8h_a4346bb2a285e7c0158191de5fe539946}{Funcao}}}]{funcao }\end{DoxyParamCaption})}
+
+
+
+Insere uma função para cálculo 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em indice} & Índice da função sendo analisada \\
+\hline
+{\em funcao} & Ponteiro para a função \\
+\hline
+\end{DoxyParams}
+
+
+Definição na linha 19 do arquivo jacobiana.\+cpp.
+
+\mbox{\Hypertarget{class_jacobiana_aef447c9d162bebe31671d83202c6134b}\label{class_jacobiana_aef447c9d162bebe31671d83202c6134b}} 
+\index{Jacobiana@{Jacobiana}!setH@{setH}}
+\index{setH@{setH}!Jacobiana@{Jacobiana}}
+\doxysubsubsection{\texorpdfstring{setH()}{setH()}}
+{\footnotesize\ttfamily void Jacobiana\+::setH (\begin{DoxyParamCaption}\item[{double}]{h }\end{DoxyParamCaption})}
+
+
+
+Define a diferença h para cálculo das derivadas 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em h} & Diferença h sendo inserida \\
+\hline
+\end{DoxyParams}
+
+
+Definição na linha 45 do arquivo jacobiana.\+cpp.
+
+
+
+\doxysubsection{Atributos}
+\mbox{\Hypertarget{class_jacobiana_a88ec34771a90f1cfecbe01ea905c17ee}\label{class_jacobiana_a88ec34771a90f1cfecbe01ea905c17ee}} 
+\index{Jacobiana@{Jacobiana}!funcao@{funcao}}
+\index{funcao@{funcao}!Jacobiana@{Jacobiana}}
+\doxysubsubsection{\texorpdfstring{funcao}{funcao}}
+{\footnotesize\ttfamily \mbox{\hyperlink{jacobiana_8h_a4346bb2a285e7c0158191de5fe539946}{Funcao}}$\ast$ Jacobiana\+::funcao\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definição na linha 15 do arquivo jacobiana.\+h.
+
+\mbox{\Hypertarget{class_jacobiana_a32fb72d7bc9c297459ae34bf60dfe6bb}\label{class_jacobiana_a32fb72d7bc9c297459ae34bf60dfe6bb}} 
+\index{Jacobiana@{Jacobiana}!h@{h}}
+\index{h@{h}!Jacobiana@{Jacobiana}}
+\doxysubsubsection{\texorpdfstring{h}{h}}
+{\footnotesize\ttfamily double Jacobiana\+::h\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Vetor de funções 
+
+Diferença a ser utilizada 
+
+Definição na linha 18 do arquivo jacobiana.\+h.
+
+\mbox{\Hypertarget{class_jacobiana_a65b6bcec9fb7b3d10e65b5f5c22e37ec}\label{class_jacobiana_a65b6bcec9fb7b3d10e65b5f5c22e37ec}} 
+\index{Jacobiana@{Jacobiana}!nFuncao@{nFuncao}}
+\index{nFuncao@{nFuncao}!Jacobiana@{Jacobiana}}
+\doxysubsubsection{\texorpdfstring{nFuncao}{nFuncao}}
+{\footnotesize\ttfamily int Jacobiana\+::n\+Funcao\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definição na linha 19 do arquivo jacobiana.\+h.
+
+\mbox{\Hypertarget{class_jacobiana_aa17316698596f09865712f2b7baf99f0}\label{class_jacobiana_aa17316698596f09865712f2b7baf99f0}} 
+\index{Jacobiana@{Jacobiana}!nIncognita@{nIncognita}}
+\index{nIncognita@{nIncognita}!Jacobiana@{Jacobiana}}
+\doxysubsubsection{\texorpdfstring{nIncognita}{nIncognita}}
+{\footnotesize\ttfamily int Jacobiana\+::n\+Incognita\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Número de funções no vetor 
+
+
+
+Definição na linha 19 do arquivo jacobiana.\+h.
+
+
+
+A documentação para essa classe foi gerada a partir dos seguintes arquivos\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Elton/source/\+Repos/\+Projeto-\/\+Sistema\+Não\+Linear-\/\+M\+S211/\+Projeto-\/\+Sistema\+Não\+Linear-\/\+M\+S211/\mbox{\hyperlink{jacobiana_8h}{jacobiana.\+h}}\item 
+C\+:/\+Users/\+Elton/source/\+Repos/\+Projeto-\/\+Sistema\+Não\+Linear-\/\+M\+S211/\+Projeto-\/\+Sistema\+Não\+Linear-\/\+M\+S211/\mbox{\hyperlink{jacobiana_8cpp}{jacobiana.\+cpp}}\end{DoxyCompactItemize}

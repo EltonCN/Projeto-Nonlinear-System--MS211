@@ -6,46 +6,46 @@
 typedef double(*Funcao)(double*);
 #endif 
 
-///<summary> Implementa o c·lculo de uma matriz Jacobiana, aproximando as derivadas </summary>
-///<remarks> Aproxima a derivada considerando uma diferenÁa h </remarks>
+/// <summary>Implementa o c√°lculo de uma matriz Jacobiana, aproximando as derivadas </summary>
+/// <remarks>Aproxima a derivada considerando uma diferen√ßa h </remarks>
 class Jacobiana
 {
 	private:
 		
-		Funcao *funcao;///<value> Vetor de funÁıes </value>
+		Funcao *funcao;/// <value> Vetor de fun√ß√µes </value>
 		
-		///<value> DiferenÁa a ser utilizada </value>
+		///<value> Diferen√ßa a ser utilizada </value>
 		double h; 
-		int nFuncao, ///<value> N˙mero de funÁıes no vetor </value>
-			nIncognita; ///<value> N˙mero de vari·veis das funÁıes </value>
+		int nFuncao, /// <value> N√∫mero de fun√ß√µes no vetor </value>
+			nIncognita; /// <value> N√∫mero de vari√°veis das fun√ß√µes </value>
 
-		///<summary> Calcula um valor de derivada </summary>
-		///<param name="indiceFuncao"> Õndice da funÁ„o a ser avaliada </param>
-		///<param name="indiceX"> Õndice da vari·vel em an·lise </param>
-		///<param name="x"> Vetor das vari·veis </param>
-		///<return> Valor da derivada calculada </returns>
+		/// <summary> Calcula um valor de derivada </summary>
+		/// <param name="indiceFuncao"> √çndice da fun√ß√£o a ser avaliada </param>
+		/// <param name="indiceX"> √çndice da vari√°vel em an√°lise </param>
+		/// <param name="x"> Vetor das vari√°veis </param>
+		/// <returns> Valor da derivada calculada </returns>
 		double calculaDerivada(int indiceFuncao, int indiceX, double* x);
 		
 
 	public:
-		///<summary> Construtor </summary>
-		///<param name="nFuncao"> N˙mero de funÁıes </param>
-		///<param name="nIncognita> N˙mero de incognitas </param>
+		/// <summary> Construtor </summary>
+		/// <param name="nFuncao"> N√∫mero de fun√ß√µes </param>
+		/// <param name="nIncognita"> N√∫mero de incognitas </param>
 		Jacobiana(int nFuncao, int nIncognita);
 		~Jacobiana();
 
-		///<summary> Insere uma funÁ„o para c·lculo </summary>
-		///<param name="indice"> Õndice da funÁ„o sendo analisada </param>
-		///<param name="funcao"> Ponteiro para a funÁ„o </param>
+		/// <summary> Insere uma fun√ß√£o para c√°lculo </summary>
+		/// <param name="indice"> √çndice da fun√ß√£o sendo analisada </param>
+		/// <param name="funcao"> Ponteiro para a fun√ß√£o </param>
 		void inserirFuncao(int indice, Funcao funcao);
 
-		///<summary> Define a diferenÁa h para c·lculo das derivadas </summary>
-		///<param name="h"> DiferenÁa h sendo inserida </param>
+		/// <summary> Define a diferen√ßa h para c√°lculo das derivadas </summary>
+		/// <param name="h"> Diferen√ßa h sendo inserida </param>
 		void setH(double h);
 
-		///<summary> Avalia a matriz em um ponto </summary>
-		///<param name="x"> Vetor em an·lise </param>
-		///<returns> A matriz calculada </return>
+		/// <summary> Avalia a matriz em um ponto </summary>
+		/// <param name="x"> Vetor em an√°lise </param>
+		/// <returns> A matriz calculada </returns>
 		double** avaliar(double *x);
 };
 

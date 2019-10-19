@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.16"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Método de Newton para Sistemas Não Lineares: Código-Fonte de C:/Users/Elton/source/Repos/Projeto-SistemaNãoLinear-MS211/Projeto-SistemaNãoLinear-MS211/jacobiana.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Método de Newton para Sistemas Não Lineares
+   </div>
+   <div id="projectbrief">Projeto realizado para a disciplina MS211 - IMECC/Unicamp - Maicon 2019</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.16 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Busca');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">C:/Users/Elton/source/Repos/Projeto-SistemaNãoLinear-MS211/Projeto-SistemaNãoLinear-MS211/jacobiana.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="jacobiana_8cpp.html">Vá para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="pch_8h.html">pch.h</a>&quot;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="jacobiana_8h.html">jacobiana.h</a>&quot;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="class_jacobiana.html#a2169198da9a0a6dc3beb636f323788d5">    6</a></span>&#160;<a class="code" href="class_jacobiana.html#a2169198da9a0a6dc3beb636f323788d5">Jacobiana::Jacobiana</a>(<span class="keywordtype">int</span> nFuncao, <span class="keywordtype">int</span> nIncognita)</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    this-&gt;nFuncao = <a class="code" href="class_jacobiana.html#a65b6bcec9fb7b3d10e65b5f5c22e37ec">nFuncao</a>;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    this-&gt;nIncognita = <a class="code" href="class_jacobiana.html#aa17316698596f09865712f2b7baf99f0">nIncognita</a>;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <a class="code" href="class_jacobiana.html#a88ec34771a90f1cfecbe01ea905c17ee">funcao</a> = (<a class="code" href="jacobiana_8h.html#a4346bb2a285e7c0158191de5fe539946">Funcao</a>*) malloc(<a class="code" href="class_jacobiana.html#a65b6bcec9fb7b3d10e65b5f5c22e37ec">nFuncao</a> * <span class="keyword">sizeof</span>(<a class="code" href="jacobiana_8h.html#a4346bb2a285e7c0158191de5fe539946">Funcao</a>));</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;}</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="class_jacobiana.html#af0fcc0ccdc5cc3e212836ba2540e9b55">   15</a></span>&#160;<a class="code" href="class_jacobiana.html#af0fcc0ccdc5cc3e212836ba2540e9b55">Jacobiana::~Jacobiana</a>()</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;}</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="class_jacobiana.html#ab9dede31136209d81b2cffc7e4e2bd3c">   19</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_jacobiana.html#ab9dede31136209d81b2cffc7e4e2bd3c">Jacobiana::inserirFuncao</a>(<span class="keywordtype">int</span> indice, <a class="code" href="jacobiana_8h.html#a4346bb2a285e7c0158191de5fe539946">Funcao</a> funcao)</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    this-&gt;funcao[indice] = <a class="code" href="class_jacobiana.html#a88ec34771a90f1cfecbe01ea905c17ee">funcao</a>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;}</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="class_jacobiana.html#ae968611cb3658318cfda6fd7b27e6bdc">   24</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_jacobiana.html#ae968611cb3658318cfda6fd7b27e6bdc">Jacobiana::calculaDerivada</a>(<span class="keywordtype">int</span> indiceFuncao, <span class="keywordtype">int</span> indiceX, <span class="keywordtype">double</span>* x)</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">double</span>* xh = (<span class="keywordtype">double</span>*) malloc(<span class="keyword">sizeof</span>(<span class="keywordtype">double</span>)*<a class="code" href="class_jacobiana.html#aa17316698596f09865712f2b7baf99f0">nIncognita</a>);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="class_jacobiana.html#aa17316698596f09865712f2b7baf99f0">nIncognita</a>; i++)</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        xh[i] = x[i];</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordflow">if</span> (i == indiceX)</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            xh[i] += this-&gt;<a class="code" href="class_jacobiana.html#a32fb72d7bc9c297459ae34bf60dfe6bb">h</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        }</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    }</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">double</span> <a class="code" href="_projeto-_sistema_n_xC3_xA3o_linear-_m_s211_8cpp.html#a1559d75767165dd7fb13d3be42b789ab">f1</a> = <a class="code" href="class_jacobiana.html#a88ec34771a90f1cfecbe01ea905c17ee">funcao</a>[indiceFuncao](xh);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">double</span> <a class="code" href="_projeto-_sistema_n_xC3_xA3o_linear-_m_s211_8cpp.html#af01348eb343aad995efc05e56c01fc7f">f2</a> = <a class="code" href="class_jacobiana.html#a88ec34771a90f1cfecbe01ea905c17ee">funcao</a>[indiceFuncao](x);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">double</span> resultado = ( <a class="code" href="_projeto-_sistema_n_xC3_xA3o_linear-_m_s211_8cpp.html#a1559d75767165dd7fb13d3be42b789ab">f1</a> - <a class="code" href="_projeto-_sistema_n_xC3_xA3o_linear-_m_s211_8cpp.html#af01348eb343aad995efc05e56c01fc7f">f2</a>) / this-&gt;<a class="code" href="class_jacobiana.html#a32fb72d7bc9c297459ae34bf60dfe6bb">h</a>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordflow">return</span> resultado;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="class_jacobiana.html#aef447c9d162bebe31671d83202c6134b">   45</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_jacobiana.html#aef447c9d162bebe31671d83202c6134b">Jacobiana::setH</a>(<span class="keywordtype">double</span> h)</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;{</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    this-&gt;h = <a class="code" href="class_jacobiana.html#a32fb72d7bc9c297459ae34bf60dfe6bb">h</a>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="class_jacobiana.html#ac624911d25ceb62e52f1ac19085d1057">   50</a></span>&#160;<span class="keywordtype">double</span>** <a class="code" href="class_jacobiana.html#ac624911d25ceb62e52f1ac19085d1057">Jacobiana::avaliar</a>(<span class="keywordtype">double</span> *x)</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;{</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">double</span>** resultado = (<span class="keywordtype">double</span>**)malloc(<a class="code" href="class_jacobiana.html#aa17316698596f09865712f2b7baf99f0">nIncognita</a> * <span class="keyword">sizeof</span>(<span class="keywordtype">double</span>*));</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="class_jacobiana.html#aa17316698596f09865712f2b7baf99f0">nIncognita</a>; i++)</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        resultado[i] = (<span class="keywordtype">double</span>*) malloc(<a class="code" href="class_jacobiana.html#a65b6bcec9fb7b3d10e65b5f5c22e37ec">nFuncao</a> * <span class="keyword">sizeof</span>(<span class="keywordtype">double</span>));</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="class_jacobiana.html#aa17316698596f09865712f2b7baf99f0">nIncognita</a>; i++)</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; <a class="code" href="class_jacobiana.html#a65b6bcec9fb7b3d10e65b5f5c22e37ec">nFuncao</a>; j++)</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            resultado[j][i] = <a class="code" href="class_jacobiana.html#ae968611cb3658318cfda6fd7b27e6bdc">calculaDerivada</a>(j, i, x);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        }</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    }</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">return</span> resultado;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}</div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclass_jacobiana_html_ac624911d25ceb62e52f1ac19085d1057"><div class="ttname"><a href="class_jacobiana.html#ac624911d25ceb62e52f1ac19085d1057">Jacobiana::avaliar</a></div><div class="ttdeci">double ** avaliar(double *x)</div><div class="ttdoc">Avalia a matriz em um ponto</div><div class="ttdef"><b>Definition:</b> <a href="jacobiana_8cpp_source.html#l00050">jacobiana.cpp:50</a></div></div>
+<div class="ttc" id="aclass_jacobiana_html_a65b6bcec9fb7b3d10e65b5f5c22e37ec"><div class="ttname"><a href="class_jacobiana.html#a65b6bcec9fb7b3d10e65b5f5c22e37ec">Jacobiana::nFuncao</a></div><div class="ttdeci">int nFuncao</div><div class="ttdef"><b>Definition:</b> <a href="jacobiana_8h_source.html#l00019">jacobiana.h:19</a></div></div>
+<div class="ttc" id="aclass_jacobiana_html_aef447c9d162bebe31671d83202c6134b"><div class="ttname"><a href="class_jacobiana.html#aef447c9d162bebe31671d83202c6134b">Jacobiana::setH</a></div><div class="ttdeci">void setH(double h)</div><div class="ttdoc">Define a diferença h para cálculo das derivadas</div><div class="ttdef"><b>Definition:</b> <a href="jacobiana_8cpp_source.html#l00045">jacobiana.cpp:45</a></div></div>
+<div class="ttc" id="apch_8h_html"><div class="ttname"><a href="pch_8h.html">pch.h</a></div></div>
+<div class="ttc" id="aclass_jacobiana_html_a88ec34771a90f1cfecbe01ea905c17ee"><div class="ttname"><a href="class_jacobiana.html#a88ec34771a90f1cfecbe01ea905c17ee">Jacobiana::funcao</a></div><div class="ttdeci">Funcao * funcao</div><div class="ttdef"><b>Definition:</b> <a href="jacobiana_8h_source.html#l00015">jacobiana.h:15</a></div></div>
+<div class="ttc" id="aclass_jacobiana_html_ab9dede31136209d81b2cffc7e4e2bd3c"><div class="ttname"><a href="class_jacobiana.html#ab9dede31136209d81b2cffc7e4e2bd3c">Jacobiana::inserirFuncao</a></div><div class="ttdeci">void inserirFuncao(int indice, Funcao funcao)</div><div class="ttdoc">Insere uma função para cálculo</div><div class="ttdef"><b>Definition:</b> <a href="jacobiana_8cpp_source.html#l00019">jacobiana.cpp:19</a></div></div>
+<div class="ttc" id="aclass_jacobiana_html_ae968611cb3658318cfda6fd7b27e6bdc"><div class="ttname"><a href="class_jacobiana.html#ae968611cb3658318cfda6fd7b27e6bdc">Jacobiana::calculaDerivada</a></div><div class="ttdeci">double calculaDerivada(int indiceFuncao, int indiceX, double *x)</div><div class="ttdoc">Número de variáveis das funções</div><div class="ttdef"><b>Definition:</b> <a href="jacobiana_8cpp_source.html#l00024">jacobiana.cpp:24</a></div></div>
+<div class="ttc" id="aclass_jacobiana_html_a32fb72d7bc9c297459ae34bf60dfe6bb"><div class="ttname"><a href="class_jacobiana.html#a32fb72d7bc9c297459ae34bf60dfe6bb">Jacobiana::h</a></div><div class="ttdeci">double h</div><div class="ttdoc">Vetor de funções</div><div class="ttdef"><b>Definition:</b> <a href="jacobiana_8h_source.html#l00018">jacobiana.h:18</a></div></div>
+<div class="ttc" id="a_projeto-_sistema_n_xC3_xA3o_linear-_m_s211_8cpp_html_af01348eb343aad995efc05e56c01fc7f"><div class="ttname"><a href="_projeto-_sistema_n_xC3_xA3o_linear-_m_s211_8cpp.html#af01348eb343aad995efc05e56c01fc7f">f2</a></div><div class="ttdeci">double f2(double *x)</div><div class="ttdef"><b>Definition:</b> <a href="_projeto-_sistema_n_xC3_xA3o_linear-_m_s211_8cpp_source.html#l00017">Projeto-SistemaNãoLinear-MS211.cpp:17</a></div></div>
+<div class="ttc" id="ajacobiana_8h_html_a4346bb2a285e7c0158191de5fe539946"><div class="ttname"><a href="jacobiana_8h.html#a4346bb2a285e7c0158191de5fe539946">Funcao</a></div><div class="ttdeci">double(* Funcao)(double *)</div><div class="ttdef"><b>Definition:</b> <a href="jacobiana_8h_source.html#l00006">jacobiana.h:6</a></div></div>
+<div class="ttc" id="a_projeto-_sistema_n_xC3_xA3o_linear-_m_s211_8cpp_html_a1559d75767165dd7fb13d3be42b789ab"><div class="ttname"><a href="_projeto-_sistema_n_xC3_xA3o_linear-_m_s211_8cpp.html#a1559d75767165dd7fb13d3be42b789ab">f1</a></div><div class="ttdeci">double f1(double *x)</div><div class="ttdef"><b>Definition:</b> <a href="_projeto-_sistema_n_xC3_xA3o_linear-_m_s211_8cpp_source.html#l00012">Projeto-SistemaNãoLinear-MS211.cpp:12</a></div></div>
+<div class="ttc" id="aclass_jacobiana_html_a2169198da9a0a6dc3beb636f323788d5"><div class="ttname"><a href="class_jacobiana.html#a2169198da9a0a6dc3beb636f323788d5">Jacobiana::Jacobiana</a></div><div class="ttdeci">Jacobiana(int nFuncao, int nIncognita)</div><div class="ttdoc">Construtor</div><div class="ttdef"><b>Definition:</b> <a href="jacobiana_8cpp_source.html#l00006">jacobiana.cpp:6</a></div></div>
+<div class="ttc" id="aclass_jacobiana_html_af0fcc0ccdc5cc3e212836ba2540e9b55"><div class="ttname"><a href="class_jacobiana.html#af0fcc0ccdc5cc3e212836ba2540e9b55">Jacobiana::~Jacobiana</a></div><div class="ttdeci">~Jacobiana()</div><div class="ttdef"><b>Definition:</b> <a href="jacobiana_8cpp_source.html#l00015">jacobiana.cpp:15</a></div></div>
+<div class="ttc" id="ajacobiana_8h_html"><div class="ttname"><a href="jacobiana_8h.html">jacobiana.h</a></div></div>
+<div class="ttc" id="aclass_jacobiana_html_aa17316698596f09865712f2b7baf99f0"><div class="ttname"><a href="class_jacobiana.html#aa17316698596f09865712f2b7baf99f0">Jacobiana::nIncognita</a></div><div class="ttdeci">int nIncognita</div><div class="ttdoc">Número de funções no vetor</div><div class="ttdef"><b>Definition:</b> <a href="jacobiana_8h_source.html#l00019">jacobiana.h:19</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.16
+</small></address>
+</body>
+</html>

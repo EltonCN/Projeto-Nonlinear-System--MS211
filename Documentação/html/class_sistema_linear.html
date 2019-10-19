@@ -1,0 +1,641 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.16"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Método de Newton para Sistemas Não Lineares: Referência da Classe SistemaLinear</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Método de Newton para Sistemas Não Lineares
+   </div>
+   <div id="projectbrief">Projeto realizado para a disciplina MS211 - IMECC/Unicamp - Maicon 2019</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.16 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Busca');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Membros Públicos</a> &#124;
+<a href="#pri-methods">Membros Privados</a> &#124;
+<a href="#pri-attribs">Atributos Privados</a> &#124;
+<a href="class_sistema_linear-members.html">Lista de todos os Membros</a>  </div>
+  <div class="headertitle">
+<div class="title">Referência da Classe SistemaLinear</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Implementa a resolução de sistemas lineares  
+ <a href="class_sistema_linear.html#details">Mais...</a></p>
+
+<p><code>#include &lt;<a class="el" href="sistema_linear_8h_source.html">sistemaLinear.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Membros Públicos</h2></td></tr>
+<tr class="memitem:a0d36ce0d7ce1de472df8a169abfab9d9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sistema_linear.html#a0d36ce0d7ce1de472df8a169abfab9d9">SistemaLinear</a> (int <a class="el" href="class_sistema_linear.html#a977d5f5209d0983d8c065166739fc7f8">nEquacao</a>)</td></tr>
+<tr class="memdesc:a0d36ce0d7ce1de472df8a169abfab9d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construtor da classe  <a href="class_sistema_linear.html#a0d36ce0d7ce1de472df8a169abfab9d9">Mais...</a><br /></td></tr>
+<tr class="separator:a0d36ce0d7ce1de472df8a169abfab9d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa90620cd18fa0572a09fcb1948b14fa"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sistema_linear.html#aaa90620cd18fa0572a09fcb1948b14fa">~SistemaLinear</a> ()</td></tr>
+<tr class="separator:aaa90620cd18fa0572a09fcb1948b14fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae02c4b18ff2e30b0302da95532a7266f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sistema_linear.html#ae02c4b18ff2e30b0302da95532a7266f">setParadaIteracao</a> (int <a class="el" href="class_sistema_linear.html#a7c9eb4314775549c6520c255eb548642">nMaxIteracao</a>)</td></tr>
+<tr class="memdesc:ae02c4b18ff2e30b0302da95532a7266f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define o número máximo de iterações  <a href="class_sistema_linear.html#ae02c4b18ff2e30b0302da95532a7266f">Mais...</a><br /></td></tr>
+<tr class="separator:ae02c4b18ff2e30b0302da95532a7266f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76ec7e6e9eb8665daf2c01c6aa034b34"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sistema_linear.html#a76ec7e6e9eb8665daf2c01c6aa034b34">setParadaErro</a> (double <a class="el" href="class_sistema_linear.html#a0b78f2fa0c1e6ea4c74dbea6e4583bc1">erroMaximo</a>)</td></tr>
+<tr class="memdesc:a76ec7e6e9eb8665daf2c01c6aa034b34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define o erro máximo para parada  <a href="class_sistema_linear.html#a76ec7e6e9eb8665daf2c01c6aa034b34">Mais...</a><br /></td></tr>
+<tr class="separator:a76ec7e6e9eb8665daf2c01c6aa034b34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb654a61bfe9d2434f35b175dfb23400"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sistema_linear.html#adb654a61bfe9d2434f35b175dfb23400">inserirMatriz</a> (double **matrizCoeficientes)</td></tr>
+<tr class="memdesc:adb654a61bfe9d2434f35b175dfb23400"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insere a matriz de coeficientes  <a href="class_sistema_linear.html#adb654a61bfe9d2434f35b175dfb23400">Mais...</a><br /></td></tr>
+<tr class="separator:adb654a61bfe9d2434f35b175dfb23400"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50f1a72c3f19c4ddf9223059e814ae9d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sistema_linear.html#a50f1a72c3f19c4ddf9223059e814ae9d">inserirTermoFonte</a> (double *fonte)</td></tr>
+<tr class="memdesc:a50f1a72c3f19c4ddf9223059e814ae9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insere o vetor de termos independentes  <a href="class_sistema_linear.html#a50f1a72c3f19c4ddf9223059e814ae9d">Mais...</a><br /></td></tr>
+<tr class="separator:a50f1a72c3f19c4ddf9223059e814ae9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13591eaa23be38b1ecfd3bde138c0e0d"><td class="memItemLeft" align="right" valign="top">double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sistema_linear.html#a13591eaa23be38b1ecfd3bde138c0e0d">calcular</a> ()</td></tr>
+<tr class="memdesc:a13591eaa23be38b1ecfd3bde138c0e0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calcula a solução do sistema  <a href="class_sistema_linear.html#a13591eaa23be38b1ecfd3bde138c0e0d">Mais...</a><br /></td></tr>
+<tr class="separator:a13591eaa23be38b1ecfd3bde138c0e0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaaa7a1c35c7b55bfa0ca12433cb88101"><td class="memItemLeft" align="right" valign="top">double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sistema_linear.html#aaaa7a1c35c7b55bfa0ca12433cb88101">calcular</a> (double *inicial)</td></tr>
+<tr class="memdesc:aaaa7a1c35c7b55bfa0ca12433cb88101"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calcula a solução do sistema  <a href="class_sistema_linear.html#aaaa7a1c35c7b55bfa0ca12433cb88101">Mais...</a><br /></td></tr>
+<tr class="separator:aaaa7a1c35c7b55bfa0ca12433cb88101"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Membros Privados</h2></td></tr>
+<tr class="memitem:a498ad284ce56eec7f58c826141f13077"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sistema_linear.html#a498ad284ce56eec7f58c826141f13077">iterar</a> ()</td></tr>
+<tr class="memdesc:a498ad284ce56eec7f58c826141f13077"><td class="mdescLeft">&#160;</td><td class="mdescRight">Soluçaõ atual  <a href="class_sistema_linear.html#a498ad284ce56eec7f58c826141f13077">Mais...</a><br /></td></tr>
+<tr class="separator:a498ad284ce56eec7f58c826141f13077"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a648bb40391bc999556828f9c7fe4d11a"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sistema_linear.html#a648bb40391bc999556828f9c7fe4d11a">erro</a> ()</td></tr>
+<tr class="memdesc:a648bb40391bc999556828f9c7fe4d11a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calcula o erro máximo nas funções  <a href="class_sistema_linear.html#a648bb40391bc999556828f9c7fe4d11a">Mais...</a><br /></td></tr>
+<tr class="separator:a648bb40391bc999556828f9c7fe4d11a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Atributos Privados</h2></td></tr>
+<tr class="memitem:adfe802fa71c16580e4a6e5b968f9d2bc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sistema_linear.html#adfe802fa71c16580e4a6e5b968f9d2bc">nIteracao</a></td></tr>
+<tr class="separator:adfe802fa71c16580e4a6e5b968f9d2bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c9eb4314775549c6520c255eb548642"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sistema_linear.html#a7c9eb4314775549c6520c255eb548642">nMaxIteracao</a></td></tr>
+<tr class="memdesc:a7c9eb4314775549c6520c255eb548642"><td class="mdescLeft">&#160;</td><td class="mdescRight">Índice da iteração atual  <a href="class_sistema_linear.html#a7c9eb4314775549c6520c255eb548642">Mais...</a><br /></td></tr>
+<tr class="separator:a7c9eb4314775549c6520c255eb548642"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b78f2fa0c1e6ea4c74dbea6e4583bc1"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sistema_linear.html#a0b78f2fa0c1e6ea4c74dbea6e4583bc1">erroMaximo</a></td></tr>
+<tr class="memdesc:a0b78f2fa0c1e6ea4c74dbea6e4583bc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Número máximo de iterações  <a href="class_sistema_linear.html#a0b78f2fa0c1e6ea4c74dbea6e4583bc1">Mais...</a><br /></td></tr>
+<tr class="separator:a0b78f2fa0c1e6ea4c74dbea6e4583bc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a977d5f5209d0983d8c065166739fc7f8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sistema_linear.html#a977d5f5209d0983d8c065166739fc7f8">nEquacao</a></td></tr>
+<tr class="memdesc:a977d5f5209d0983d8c065166739fc7f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Erro máximo nas funções  <a href="class_sistema_linear.html#a977d5f5209d0983d8c065166739fc7f8">Mais...</a><br /></td></tr>
+<tr class="separator:a977d5f5209d0983d8c065166739fc7f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a817b5af3257374d7811de130a49cb696"><td class="memItemLeft" align="right" valign="top">double **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sistema_linear.html#a817b5af3257374d7811de130a49cb696">m</a></td></tr>
+<tr class="memdesc:a817b5af3257374d7811de130a49cb696"><td class="mdescLeft">&#160;</td><td class="mdescRight">O número de equações do sistema  <a href="class_sistema_linear.html#a817b5af3257374d7811de130a49cb696">Mais...</a><br /></td></tr>
+<tr class="separator:a817b5af3257374d7811de130a49cb696"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab796aad3770f97a721689fe5834c1f2d"><td class="memItemLeft" align="right" valign="top">double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sistema_linear.html#ab796aad3770f97a721689fe5834c1f2d">b</a></td></tr>
+<tr class="memdesc:ab796aad3770f97a721689fe5834c1f2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">A matriz de coeficientes  <a href="class_sistema_linear.html#ab796aad3770f97a721689fe5834c1f2d">Mais...</a><br /></td></tr>
+<tr class="separator:ab796aad3770f97a721689fe5834c1f2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e39d1180597289f450ad232765f2a83"><td class="memItemLeft" align="right" valign="top">double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sistema_linear.html#a4e39d1180597289f450ad232765f2a83">xAnt</a></td></tr>
+<tr class="memdesc:a4e39d1180597289f450ad232765f2a83"><td class="mdescLeft">&#160;</td><td class="mdescRight">O vetor dos termos independentes  <a href="class_sistema_linear.html#a4e39d1180597289f450ad232765f2a83">Mais...</a><br /></td></tr>
+<tr class="separator:a4e39d1180597289f450ad232765f2a83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a815e235be29b58915964c91d22c16c51"><td class="memItemLeft" align="right" valign="top">double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sistema_linear.html#a815e235be29b58915964c91d22c16c51">xAtual</a></td></tr>
+<tr class="memdesc:a815e235be29b58915964c91d22c16c51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solução anterior  <a href="class_sistema_linear.html#a815e235be29b58915964c91d22c16c51">Mais...</a><br /></td></tr>
+<tr class="separator:a815e235be29b58915964c91d22c16c51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
+<div class="textblock"><p>Implementa a resolução de sistemas lineares </p>
+<p>Utiliza o método de de Gauss-Jacobi </p>
+<p><br  />
+ </p>
+
+<p class="definition">Definição na linha <a class="el" href="sistema_linear_8h_source.html#l00005">5</a> do arquivo <a class="el" href="sistema_linear_8h_source.html">sistemaLinear.h</a>.</p>
+</div><h2 class="groupheader">Construtores e Destrutores</h2>
+<a id="a0d36ce0d7ce1de472df8a169abfab9d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d36ce0d7ce1de472df8a169abfab9d9">&#9670;&nbsp;</a></span>SistemaLinear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SistemaLinear::SistemaLinear </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nEquacao</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construtor da classe </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nEquacao</td><td>O número de equações do sistema </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definição na linha <a class="el" href="sistema_linear_8cpp_source.html#l00006">6</a> do arquivo <a class="el" href="sistema_linear_8cpp_source.html">sistemaLinear.cpp</a>.</p>
+
+</div>
+</div>
+<a id="aaa90620cd18fa0572a09fcb1948b14fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa90620cd18fa0572a09fcb1948b14fa">&#9670;&nbsp;</a></span>~SistemaLinear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SistemaLinear::~SistemaLinear </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="sistema_linear_8cpp_source.html#l00019">19</a> do arquivo <a class="el" href="sistema_linear_8cpp_source.html">sistemaLinear.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Funções membros</h2>
+<a id="a13591eaa23be38b1ecfd3bde138c0e0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13591eaa23be38b1ecfd3bde138c0e0d">&#9670;&nbsp;</a></span>calcular() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double * SistemaLinear::calcular </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calcula a solução do sistema </p>
+<dl class="section return"><dt>Retorna</dt><dd>O vetor solução </dd></dl>
+
+<p class="definition">Definição na linha <a class="el" href="sistema_linear_8cpp_source.html#l00043">43</a> do arquivo <a class="el" href="sistema_linear_8cpp_source.html">sistemaLinear.cpp</a>.</p>
+
+</div>
+</div>
+<a id="aaaa7a1c35c7b55bfa0ca12433cb88101"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaaa7a1c35c7b55bfa0ca12433cb88101">&#9670;&nbsp;</a></span>calcular() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double * SistemaLinear::calcular </td>
+          <td>(</td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>inicial</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calcula a solução do sistema </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">inicial</td><td>Valor inicial </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>O vetor solução </dd></dl>
+
+<p class="definition">Definição na linha <a class="el" href="sistema_linear_8cpp_source.html#l00068">68</a> do arquivo <a class="el" href="sistema_linear_8cpp_source.html">sistemaLinear.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a648bb40391bc999556828f9c7fe4d11a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a648bb40391bc999556828f9c7fe4d11a">&#9670;&nbsp;</a></span>erro()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double SistemaLinear::erro </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Calcula o erro máximo nas funções </p>
+<dl class="section return"><dt>Retorna</dt><dd>O erro máximo </dd></dl>
+
+<p class="definition">Definição na linha <a class="el" href="sistema_linear_8cpp_source.html#l00118">118</a> do arquivo <a class="el" href="sistema_linear_8cpp_source.html">sistemaLinear.cpp</a>.</p>
+
+</div>
+</div>
+<a id="adb654a61bfe9d2434f35b175dfb23400"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb654a61bfe9d2434f35b175dfb23400">&#9670;&nbsp;</a></span>inserirMatriz()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SistemaLinear::inserirMatriz </td>
+          <td>(</td>
+          <td class="paramtype">double **&#160;</td>
+          <td class="paramname"><em>matrizCoeficientes</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Insere a matriz de coeficientes </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">matrizCoeficientes</td><td>A matriz de coeficientes </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definição na linha <a class="el" href="sistema_linear_8cpp_source.html#l00033">33</a> do arquivo <a class="el" href="sistema_linear_8cpp_source.html">sistemaLinear.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a50f1a72c3f19c4ddf9223059e814ae9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50f1a72c3f19c4ddf9223059e814ae9d">&#9670;&nbsp;</a></span>inserirTermoFonte()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SistemaLinear::inserirTermoFonte </td>
+          <td>(</td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>fonte</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Insere o vetor de termos independentes </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fonte</td><td>Vetor </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definição na linha <a class="el" href="sistema_linear_8cpp_source.html#l00038">38</a> do arquivo <a class="el" href="sistema_linear_8cpp_source.html">sistemaLinear.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a498ad284ce56eec7f58c826141f13077"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a498ad284ce56eec7f58c826141f13077">&#9670;&nbsp;</a></span>iterar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SistemaLinear::iterar </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Soluçaõ atual </p>
+<p>Realiza uma iteração </p>
+
+<p class="definition">Definição na linha <a class="el" href="sistema_linear_8cpp_source.html#l00093">93</a> do arquivo <a class="el" href="sistema_linear_8cpp_source.html">sistemaLinear.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a76ec7e6e9eb8665daf2c01c6aa034b34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76ec7e6e9eb8665daf2c01c6aa034b34">&#9670;&nbsp;</a></span>setParadaErro()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SistemaLinear::setParadaErro </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>erroMaximo</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Define o erro máximo para parada </p>
+<p>Também determina que o algorítmo utilizará esse critério </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">erroMaximo</td><td>O erro máximo a ser definido </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>"0" para não utilizar esse critério </p>
+
+<p class="definition">Definição na linha <a class="el" href="sistema_linear_8cpp_source.html#l00028">28</a> do arquivo <a class="el" href="sistema_linear_8cpp_source.html">sistemaLinear.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ae02c4b18ff2e30b0302da95532a7266f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae02c4b18ff2e30b0302da95532a7266f">&#9670;&nbsp;</a></span>setParadaIteracao()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SistemaLinear::setParadaIteracao </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nMaxIteracao</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Define o número máximo de iterações </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nMaxIteracao</td><td>O número máximo de iterações </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definição na linha <a class="el" href="sistema_linear_8cpp_source.html#l00023">23</a> do arquivo <a class="el" href="sistema_linear_8cpp_source.html">sistemaLinear.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Atributos</h2>
+<a id="ab796aad3770f97a721689fe5834c1f2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab796aad3770f97a721689fe5834c1f2d">&#9670;&nbsp;</a></span>b</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double* SistemaLinear::b</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A matriz de coeficientes </p>
+
+<p class="definition">Definição na linha <a class="el" href="sistema_linear_8h_source.html#l00015">15</a> do arquivo <a class="el" href="sistema_linear_8h_source.html">sistemaLinear.h</a>.</p>
+
+</div>
+</div>
+<a id="a0b78f2fa0c1e6ea4c74dbea6e4583bc1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b78f2fa0c1e6ea4c74dbea6e4583bc1">&#9670;&nbsp;</a></span>erroMaximo</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double SistemaLinear::erroMaximo</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Número máximo de iterações </p>
+
+<p class="definition">Definição na linha <a class="el" href="sistema_linear_8h_source.html#l00010">10</a> do arquivo <a class="el" href="sistema_linear_8h_source.html">sistemaLinear.h</a>.</p>
+
+</div>
+</div>
+<a id="a817b5af3257374d7811de130a49cb696"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a817b5af3257374d7811de130a49cb696">&#9670;&nbsp;</a></span>m</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double** SistemaLinear::m</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>O número de equações do sistema </p>
+
+<p class="definition">Definição na linha <a class="el" href="sistema_linear_8h_source.html#l00014">14</a> do arquivo <a class="el" href="sistema_linear_8h_source.html">sistemaLinear.h</a>.</p>
+
+</div>
+</div>
+<a id="a977d5f5209d0983d8c065166739fc7f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a977d5f5209d0983d8c065166739fc7f8">&#9670;&nbsp;</a></span>nEquacao</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SistemaLinear::nEquacao</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Erro máximo nas funções </p>
+
+<p class="definition">Definição na linha <a class="el" href="sistema_linear_8h_source.html#l00012">12</a> do arquivo <a class="el" href="sistema_linear_8h_source.html">sistemaLinear.h</a>.</p>
+
+</div>
+</div>
+<a id="adfe802fa71c16580e4a6e5b968f9d2bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfe802fa71c16580e4a6e5b968f9d2bc">&#9670;&nbsp;</a></span>nIteracao</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SistemaLinear::nIteracao</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="sistema_linear_8h_source.html#l00008">8</a> do arquivo <a class="el" href="sistema_linear_8h_source.html">sistemaLinear.h</a>.</p>
+
+</div>
+</div>
+<a id="a7c9eb4314775549c6520c255eb548642"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c9eb4314775549c6520c255eb548642">&#9670;&nbsp;</a></span>nMaxIteracao</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SistemaLinear::nMaxIteracao</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Índice da iteração atual </p>
+
+<p class="definition">Definição na linha <a class="el" href="sistema_linear_8h_source.html#l00009">9</a> do arquivo <a class="el" href="sistema_linear_8h_source.html">sistemaLinear.h</a>.</p>
+
+</div>
+</div>
+<a id="a4e39d1180597289f450ad232765f2a83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e39d1180597289f450ad232765f2a83">&#9670;&nbsp;</a></span>xAnt</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double* SistemaLinear::xAnt</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>O vetor dos termos independentes </p>
+
+<p class="definition">Definição na linha <a class="el" href="sistema_linear_8h_source.html#l00017">17</a> do arquivo <a class="el" href="sistema_linear_8h_source.html">sistemaLinear.h</a>.</p>
+
+</div>
+</div>
+<a id="a815e235be29b58915964c91d22c16c51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a815e235be29b58915964c91d22c16c51">&#9670;&nbsp;</a></span>xAtual</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double* SistemaLinear::xAtual</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Solução anterior </p>
+
+<p class="definition">Definição na linha <a class="el" href="sistema_linear_8h_source.html#l00018">18</a> do arquivo <a class="el" href="sistema_linear_8h_source.html">sistemaLinear.h</a>.</p>
+
+</div>
+</div>
+<hr/>A documentação para essa classe foi gerada a partir dos seguintes arquivos:<ul>
+<li>C:/Users/Elton/source/Repos/Projeto-SistemaNãoLinear-MS211/Projeto-SistemaNãoLinear-MS211/<a class="el" href="sistema_linear_8h_source.html">sistemaLinear.h</a></li>
+<li>C:/Users/Elton/source/Repos/Projeto-SistemaNãoLinear-MS211/Projeto-SistemaNãoLinear-MS211/<a class="el" href="sistema_linear_8cpp_source.html">sistemaLinear.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.16
+</small></address>
+</body>
+</html>

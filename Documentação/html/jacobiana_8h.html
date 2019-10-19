@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.16"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Método de Newton para Sistemas Não Lineares: Referência do Arquivo C:/Users/Elton/source/Repos/Projeto-SistemaNãoLinear-MS211/Projeto-SistemaNãoLinear-MS211/jacobiana.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Método de Newton para Sistemas Não Lineares
+   </div>
+   <div id="projectbrief">Projeto realizado para a disciplina MS211 - IMECC/Unicamp - Maicon 2019</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.16 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Busca');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Componentes</a> &#124;
+<a href="#define-members">Definições e Macros</a> &#124;
+<a href="#typedef-members">Definições de Tipos</a>  </div>
+  <div class="headertitle">
+<div class="title">Referência do Arquivo C:/Users/Elton/source/Repos/Projeto-SistemaNãoLinear-MS211/Projeto-SistemaNãoLinear-MS211/jacobiana.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;stdlib.h&gt;</code><br />
+</div>
+<p><a href="jacobiana_8h_source.html">Vá para o código-fonte desse arquivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Componentes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_jacobiana.html">Jacobiana</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implementa o cálculo de uma matriz <a class="el" href="class_jacobiana.html" title="Implementa o cálculo de uma matriz Jacobiana, aproximando as derivadas">Jacobiana</a>, aproximando as derivadas  <a href="class_jacobiana.html#details">Mais...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Definições e Macros</h2></td></tr>
+<tr class="memitem:a9fdc6054f2ca09843909be2eadc3dcae"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jacobiana_8h.html#a9fdc6054f2ca09843909be2eadc3dcae">tipoFuncao</a></td></tr>
+<tr class="separator:a9fdc6054f2ca09843909be2eadc3dcae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Definições de Tipos</h2></td></tr>
+<tr class="memitem:a4346bb2a285e7c0158191de5fe539946"><td class="memItemLeft" align="right" valign="top">typedef double(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jacobiana_8h.html#a4346bb2a285e7c0158191de5fe539946">Funcao</a>) (double *)</td></tr>
+<tr class="separator:a4346bb2a285e7c0158191de5fe539946"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Definições e macros</h2>
+<a id="a9fdc6054f2ca09843909be2eadc3dcae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9fdc6054f2ca09843909be2eadc3dcae">&#9670;&nbsp;</a></span>tipoFuncao</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define tipoFuncao</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="jacobiana_8h_source.html#l00005">5</a> do arquivo <a class="el" href="jacobiana_8h_source.html">jacobiana.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Definições dos tipos</h2>
+<a id="a4346bb2a285e7c0158191de5fe539946"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4346bb2a285e7c0158191de5fe539946">&#9670;&nbsp;</a></span>Funcao</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef double(* Funcao) (double *)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="jacobiana_8h_source.html#l00006">6</a> do arquivo <a class="el" href="jacobiana_8h_source.html">jacobiana.h</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.16
+</small></address>
+</body>
+</html>

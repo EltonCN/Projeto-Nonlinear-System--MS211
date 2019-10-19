@@ -1,0 +1,370 @@
+\hypertarget{class_sistema_linear}{}\doxysection{Referência da Classe Sistema\+Linear}
+\label{class_sistema_linear}\index{SistemaLinear@{SistemaLinear}}
+
+
+Implementa a resolução de sistemas lineares  
+
+
+
+
+{\ttfamily \#include $<$sistema\+Linear.\+h$>$}
+
+\doxysubsection*{Membros Públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_sistema_linear_a0d36ce0d7ce1de472df8a169abfab9d9}{Sistema\+Linear}} (int \mbox{\hyperlink{class_sistema_linear_a977d5f5209d0983d8c065166739fc7f8}{n\+Equacao}})
+\begin{DoxyCompactList}\small\item\em Construtor da classe \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sistema_linear_aaa90620cd18fa0572a09fcb1948b14fa}{$\sim$\+Sistema\+Linear}} ()
+\item 
+void \mbox{\hyperlink{class_sistema_linear_ae02c4b18ff2e30b0302da95532a7266f}{set\+Parada\+Iteracao}} (int \mbox{\hyperlink{class_sistema_linear_a7c9eb4314775549c6520c255eb548642}{n\+Max\+Iteracao}})
+\begin{DoxyCompactList}\small\item\em Define o número máximo de iterações \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sistema_linear_a76ec7e6e9eb8665daf2c01c6aa034b34}{set\+Parada\+Erro}} (double \mbox{\hyperlink{class_sistema_linear_a0b78f2fa0c1e6ea4c74dbea6e4583bc1}{erro\+Maximo}})
+\begin{DoxyCompactList}\small\item\em Define o erro máximo para parada \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sistema_linear_adb654a61bfe9d2434f35b175dfb23400}{inserir\+Matriz}} (double $\ast$$\ast$matriz\+Coeficientes)
+\begin{DoxyCompactList}\small\item\em Insere a matriz de coeficientes \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sistema_linear_a50f1a72c3f19c4ddf9223059e814ae9d}{inserir\+Termo\+Fonte}} (double $\ast$fonte)
+\begin{DoxyCompactList}\small\item\em Insere o vetor de termos independentes \end{DoxyCompactList}\item 
+double $\ast$ \mbox{\hyperlink{class_sistema_linear_a13591eaa23be38b1ecfd3bde138c0e0d}{calcular}} ()
+\begin{DoxyCompactList}\small\item\em Calcula a solução do sistema \end{DoxyCompactList}\item 
+double $\ast$ \mbox{\hyperlink{class_sistema_linear_aaaa7a1c35c7b55bfa0ca12433cb88101}{calcular}} (double $\ast$inicial)
+\begin{DoxyCompactList}\small\item\em Calcula a solução do sistema \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Membros Privados}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_sistema_linear_a498ad284ce56eec7f58c826141f13077}{iterar}} ()
+\begin{DoxyCompactList}\small\item\em Soluçaõ atual \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_sistema_linear_a648bb40391bc999556828f9c7fe4d11a}{erro}} ()
+\begin{DoxyCompactList}\small\item\em Calcula o erro máximo nas funções \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Atributos Privados}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_sistema_linear_adfe802fa71c16580e4a6e5b968f9d2bc}{n\+Iteracao}}
+\item 
+int \mbox{\hyperlink{class_sistema_linear_a7c9eb4314775549c6520c255eb548642}{n\+Max\+Iteracao}}
+\begin{DoxyCompactList}\small\item\em Índice da iteração atual \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_sistema_linear_a0b78f2fa0c1e6ea4c74dbea6e4583bc1}{erro\+Maximo}}
+\begin{DoxyCompactList}\small\item\em Número máximo de iterações \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_sistema_linear_a977d5f5209d0983d8c065166739fc7f8}{n\+Equacao}}
+\begin{DoxyCompactList}\small\item\em Erro máximo nas funções \end{DoxyCompactList}\item 
+double $\ast$$\ast$ \mbox{\hyperlink{class_sistema_linear_a817b5af3257374d7811de130a49cb696}{m}}
+\begin{DoxyCompactList}\small\item\em O número de equações do sistema \end{DoxyCompactList}\item 
+double $\ast$ \mbox{\hyperlink{class_sistema_linear_ab796aad3770f97a721689fe5834c1f2d}{b}}
+\begin{DoxyCompactList}\small\item\em A matriz de coeficientes \end{DoxyCompactList}\item 
+double $\ast$ \mbox{\hyperlink{class_sistema_linear_a4e39d1180597289f450ad232765f2a83}{x\+Ant}}
+\begin{DoxyCompactList}\small\item\em O vetor dos termos independentes \end{DoxyCompactList}\item 
+double $\ast$ \mbox{\hyperlink{class_sistema_linear_a815e235be29b58915964c91d22c16c51}{x\+Atual}}
+\begin{DoxyCompactList}\small\item\em Solução anterior \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+Implementa a resolução de sistemas lineares 
+
+Utiliza o método de de Gauss-\/\+Jacobi 
+
+~\newline
+ 
+
+Definição na linha 5 do arquivo sistema\+Linear.\+h.
+
+
+
+\doxysubsection{Construtores e Destrutores}
+\mbox{\Hypertarget{class_sistema_linear_a0d36ce0d7ce1de472df8a169abfab9d9}\label{class_sistema_linear_a0d36ce0d7ce1de472df8a169abfab9d9}} 
+\index{SistemaLinear@{SistemaLinear}!SistemaLinear@{SistemaLinear}}
+\index{SistemaLinear@{SistemaLinear}!SistemaLinear@{SistemaLinear}}
+\doxysubsubsection{\texorpdfstring{SistemaLinear()}{SistemaLinear()}}
+{\footnotesize\ttfamily Sistema\+Linear\+::\+Sistema\+Linear (\begin{DoxyParamCaption}\item[{int}]{n\+Equacao }\end{DoxyParamCaption})}
+
+
+
+Construtor da classe 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em n\+Equacao} & O número de equações do sistema \\
+\hline
+\end{DoxyParams}
+
+
+Definição na linha 6 do arquivo sistema\+Linear.\+cpp.
+
+\mbox{\Hypertarget{class_sistema_linear_aaa90620cd18fa0572a09fcb1948b14fa}\label{class_sistema_linear_aaa90620cd18fa0572a09fcb1948b14fa}} 
+\index{SistemaLinear@{SistemaLinear}!````~SistemaLinear@{$\sim$SistemaLinear}}
+\index{````~SistemaLinear@{$\sim$SistemaLinear}!SistemaLinear@{SistemaLinear}}
+\doxysubsubsection{\texorpdfstring{$\sim$SistemaLinear()}{~SistemaLinear()}}
+{\footnotesize\ttfamily Sistema\+Linear\+::$\sim$\+Sistema\+Linear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definição na linha 19 do arquivo sistema\+Linear.\+cpp.
+
+
+
+\doxysubsection{Funções membros}
+\mbox{\Hypertarget{class_sistema_linear_a13591eaa23be38b1ecfd3bde138c0e0d}\label{class_sistema_linear_a13591eaa23be38b1ecfd3bde138c0e0d}} 
+\index{SistemaLinear@{SistemaLinear}!calcular@{calcular}}
+\index{calcular@{calcular}!SistemaLinear@{SistemaLinear}}
+\doxysubsubsection{\texorpdfstring{calcular()}{calcular()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double $\ast$ Sistema\+Linear\+::calcular (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calcula a solução do sistema 
+
+\begin{DoxyReturn}{Retorna}
+O vetor solução 
+\end{DoxyReturn}
+
+
+Definição na linha 43 do arquivo sistema\+Linear.\+cpp.
+
+\mbox{\Hypertarget{class_sistema_linear_aaaa7a1c35c7b55bfa0ca12433cb88101}\label{class_sistema_linear_aaaa7a1c35c7b55bfa0ca12433cb88101}} 
+\index{SistemaLinear@{SistemaLinear}!calcular@{calcular}}
+\index{calcular@{calcular}!SistemaLinear@{SistemaLinear}}
+\doxysubsubsection{\texorpdfstring{calcular()}{calcular()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily double $\ast$ Sistema\+Linear\+::calcular (\begin{DoxyParamCaption}\item[{double $\ast$}]{inicial }\end{DoxyParamCaption})}
+
+
+
+Calcula a solução do sistema 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em inicial} & Valor inicial \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+O vetor solução 
+\end{DoxyReturn}
+
+
+Definição na linha 68 do arquivo sistema\+Linear.\+cpp.
+
+\mbox{\Hypertarget{class_sistema_linear_a648bb40391bc999556828f9c7fe4d11a}\label{class_sistema_linear_a648bb40391bc999556828f9c7fe4d11a}} 
+\index{SistemaLinear@{SistemaLinear}!erro@{erro}}
+\index{erro@{erro}!SistemaLinear@{SistemaLinear}}
+\doxysubsubsection{\texorpdfstring{erro()}{erro()}}
+{\footnotesize\ttfamily double Sistema\+Linear\+::erro (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Calcula o erro máximo nas funções 
+
+\begin{DoxyReturn}{Retorna}
+O erro máximo 
+\end{DoxyReturn}
+
+
+Definição na linha 118 do arquivo sistema\+Linear.\+cpp.
+
+\mbox{\Hypertarget{class_sistema_linear_adb654a61bfe9d2434f35b175dfb23400}\label{class_sistema_linear_adb654a61bfe9d2434f35b175dfb23400}} 
+\index{SistemaLinear@{SistemaLinear}!inserirMatriz@{inserirMatriz}}
+\index{inserirMatriz@{inserirMatriz}!SistemaLinear@{SistemaLinear}}
+\doxysubsubsection{\texorpdfstring{inserirMatriz()}{inserirMatriz()}}
+{\footnotesize\ttfamily void Sistema\+Linear\+::inserir\+Matriz (\begin{DoxyParamCaption}\item[{double $\ast$$\ast$}]{matriz\+Coeficientes }\end{DoxyParamCaption})}
+
+
+
+Insere a matriz de coeficientes 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em matriz\+Coeficientes} & A matriz de coeficientes \\
+\hline
+\end{DoxyParams}
+
+
+Definição na linha 33 do arquivo sistema\+Linear.\+cpp.
+
+\mbox{\Hypertarget{class_sistema_linear_a50f1a72c3f19c4ddf9223059e814ae9d}\label{class_sistema_linear_a50f1a72c3f19c4ddf9223059e814ae9d}} 
+\index{SistemaLinear@{SistemaLinear}!inserirTermoFonte@{inserirTermoFonte}}
+\index{inserirTermoFonte@{inserirTermoFonte}!SistemaLinear@{SistemaLinear}}
+\doxysubsubsection{\texorpdfstring{inserirTermoFonte()}{inserirTermoFonte()}}
+{\footnotesize\ttfamily void Sistema\+Linear\+::inserir\+Termo\+Fonte (\begin{DoxyParamCaption}\item[{double $\ast$}]{fonte }\end{DoxyParamCaption})}
+
+
+
+Insere o vetor de termos independentes 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em fonte} & Vetor \\
+\hline
+\end{DoxyParams}
+
+
+Definição na linha 38 do arquivo sistema\+Linear.\+cpp.
+
+\mbox{\Hypertarget{class_sistema_linear_a498ad284ce56eec7f58c826141f13077}\label{class_sistema_linear_a498ad284ce56eec7f58c826141f13077}} 
+\index{SistemaLinear@{SistemaLinear}!iterar@{iterar}}
+\index{iterar@{iterar}!SistemaLinear@{SistemaLinear}}
+\doxysubsubsection{\texorpdfstring{iterar()}{iterar()}}
+{\footnotesize\ttfamily void Sistema\+Linear\+::iterar (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Soluçaõ atual 
+
+Realiza uma iteração 
+
+Definição na linha 93 do arquivo sistema\+Linear.\+cpp.
+
+\mbox{\Hypertarget{class_sistema_linear_a76ec7e6e9eb8665daf2c01c6aa034b34}\label{class_sistema_linear_a76ec7e6e9eb8665daf2c01c6aa034b34}} 
+\index{SistemaLinear@{SistemaLinear}!setParadaErro@{setParadaErro}}
+\index{setParadaErro@{setParadaErro}!SistemaLinear@{SistemaLinear}}
+\doxysubsubsection{\texorpdfstring{setParadaErro()}{setParadaErro()}}
+{\footnotesize\ttfamily void Sistema\+Linear\+::set\+Parada\+Erro (\begin{DoxyParamCaption}\item[{double}]{erro\+Maximo }\end{DoxyParamCaption})}
+
+
+
+Define o erro máximo para parada 
+
+Também determina que o algorítmo utilizará esse critério 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em erro\+Maximo} & O erro máximo a ser definido \\
+\hline
+\end{DoxyParams}
+
+
+\char`\"{}0\char`\"{} para não utilizar esse critério 
+
+Definição na linha 28 do arquivo sistema\+Linear.\+cpp.
+
+\mbox{\Hypertarget{class_sistema_linear_ae02c4b18ff2e30b0302da95532a7266f}\label{class_sistema_linear_ae02c4b18ff2e30b0302da95532a7266f}} 
+\index{SistemaLinear@{SistemaLinear}!setParadaIteracao@{setParadaIteracao}}
+\index{setParadaIteracao@{setParadaIteracao}!SistemaLinear@{SistemaLinear}}
+\doxysubsubsection{\texorpdfstring{setParadaIteracao()}{setParadaIteracao()}}
+{\footnotesize\ttfamily void Sistema\+Linear\+::set\+Parada\+Iteracao (\begin{DoxyParamCaption}\item[{int}]{n\+Max\+Iteracao }\end{DoxyParamCaption})}
+
+
+
+Define o número máximo de iterações 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em n\+Max\+Iteracao} & O número máximo de iterações \\
+\hline
+\end{DoxyParams}
+
+
+Definição na linha 23 do arquivo sistema\+Linear.\+cpp.
+
+
+
+\doxysubsection{Atributos}
+\mbox{\Hypertarget{class_sistema_linear_ab796aad3770f97a721689fe5834c1f2d}\label{class_sistema_linear_ab796aad3770f97a721689fe5834c1f2d}} 
+\index{SistemaLinear@{SistemaLinear}!b@{b}}
+\index{b@{b}!SistemaLinear@{SistemaLinear}}
+\doxysubsubsection{\texorpdfstring{b}{b}}
+{\footnotesize\ttfamily double$\ast$ Sistema\+Linear\+::b\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+A matriz de coeficientes 
+
+
+
+Definição na linha 15 do arquivo sistema\+Linear.\+h.
+
+\mbox{\Hypertarget{class_sistema_linear_a0b78f2fa0c1e6ea4c74dbea6e4583bc1}\label{class_sistema_linear_a0b78f2fa0c1e6ea4c74dbea6e4583bc1}} 
+\index{SistemaLinear@{SistemaLinear}!erroMaximo@{erroMaximo}}
+\index{erroMaximo@{erroMaximo}!SistemaLinear@{SistemaLinear}}
+\doxysubsubsection{\texorpdfstring{erroMaximo}{erroMaximo}}
+{\footnotesize\ttfamily double Sistema\+Linear\+::erro\+Maximo\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Número máximo de iterações 
+
+
+
+Definição na linha 10 do arquivo sistema\+Linear.\+h.
+
+\mbox{\Hypertarget{class_sistema_linear_a817b5af3257374d7811de130a49cb696}\label{class_sistema_linear_a817b5af3257374d7811de130a49cb696}} 
+\index{SistemaLinear@{SistemaLinear}!m@{m}}
+\index{m@{m}!SistemaLinear@{SistemaLinear}}
+\doxysubsubsection{\texorpdfstring{m}{m}}
+{\footnotesize\ttfamily double$\ast$$\ast$ Sistema\+Linear\+::m\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+O número de equações do sistema 
+
+
+
+Definição na linha 14 do arquivo sistema\+Linear.\+h.
+
+\mbox{\Hypertarget{class_sistema_linear_a977d5f5209d0983d8c065166739fc7f8}\label{class_sistema_linear_a977d5f5209d0983d8c065166739fc7f8}} 
+\index{SistemaLinear@{SistemaLinear}!nEquacao@{nEquacao}}
+\index{nEquacao@{nEquacao}!SistemaLinear@{SistemaLinear}}
+\doxysubsubsection{\texorpdfstring{nEquacao}{nEquacao}}
+{\footnotesize\ttfamily int Sistema\+Linear\+::n\+Equacao\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Erro máximo nas funções 
+
+
+
+Definição na linha 12 do arquivo sistema\+Linear.\+h.
+
+\mbox{\Hypertarget{class_sistema_linear_adfe802fa71c16580e4a6e5b968f9d2bc}\label{class_sistema_linear_adfe802fa71c16580e4a6e5b968f9d2bc}} 
+\index{SistemaLinear@{SistemaLinear}!nIteracao@{nIteracao}}
+\index{nIteracao@{nIteracao}!SistemaLinear@{SistemaLinear}}
+\doxysubsubsection{\texorpdfstring{nIteracao}{nIteracao}}
+{\footnotesize\ttfamily int Sistema\+Linear\+::n\+Iteracao\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definição na linha 8 do arquivo sistema\+Linear.\+h.
+
+\mbox{\Hypertarget{class_sistema_linear_a7c9eb4314775549c6520c255eb548642}\label{class_sistema_linear_a7c9eb4314775549c6520c255eb548642}} 
+\index{SistemaLinear@{SistemaLinear}!nMaxIteracao@{nMaxIteracao}}
+\index{nMaxIteracao@{nMaxIteracao}!SistemaLinear@{SistemaLinear}}
+\doxysubsubsection{\texorpdfstring{nMaxIteracao}{nMaxIteracao}}
+{\footnotesize\ttfamily int Sistema\+Linear\+::n\+Max\+Iteracao\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Índice da iteração atual 
+
+
+
+Definição na linha 9 do arquivo sistema\+Linear.\+h.
+
+\mbox{\Hypertarget{class_sistema_linear_a4e39d1180597289f450ad232765f2a83}\label{class_sistema_linear_a4e39d1180597289f450ad232765f2a83}} 
+\index{SistemaLinear@{SistemaLinear}!xAnt@{xAnt}}
+\index{xAnt@{xAnt}!SistemaLinear@{SistemaLinear}}
+\doxysubsubsection{\texorpdfstring{xAnt}{xAnt}}
+{\footnotesize\ttfamily double$\ast$ Sistema\+Linear\+::x\+Ant\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+O vetor dos termos independentes 
+
+
+
+Definição na linha 17 do arquivo sistema\+Linear.\+h.
+
+\mbox{\Hypertarget{class_sistema_linear_a815e235be29b58915964c91d22c16c51}\label{class_sistema_linear_a815e235be29b58915964c91d22c16c51}} 
+\index{SistemaLinear@{SistemaLinear}!xAtual@{xAtual}}
+\index{xAtual@{xAtual}!SistemaLinear@{SistemaLinear}}
+\doxysubsubsection{\texorpdfstring{xAtual}{xAtual}}
+{\footnotesize\ttfamily double$\ast$ Sistema\+Linear\+::x\+Atual\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Solução anterior 
+
+
+
+Definição na linha 18 do arquivo sistema\+Linear.\+h.
+
+
+
+A documentação para essa classe foi gerada a partir dos seguintes arquivos\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Elton/source/\+Repos/\+Projeto-\/\+Sistema\+Não\+Linear-\/\+M\+S211/\+Projeto-\/\+Sistema\+Não\+Linear-\/\+M\+S211/\mbox{\hyperlink{sistema_linear_8h}{sistema\+Linear.\+h}}\item 
+C\+:/\+Users/\+Elton/source/\+Repos/\+Projeto-\/\+Sistema\+Não\+Linear-\/\+M\+S211/\+Projeto-\/\+Sistema\+Não\+Linear-\/\+M\+S211/\mbox{\hyperlink{sistema_linear_8cpp}{sistema\+Linear.\+cpp}}\end{DoxyCompactItemize}

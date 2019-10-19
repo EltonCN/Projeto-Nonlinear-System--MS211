@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.16"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Método de Newton para Sistemas Não Lineares: Código-Fonte de C:/Users/Elton/source/Repos/Projeto-SistemaNãoLinear-MS211/Projeto-SistemaNãoLinear-MS211/sistemaLinear.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Método de Newton para Sistemas Não Lineares
+   </div>
+   <div id="projectbrief">Projeto realizado para a disciplina MS211 - IMECC/Unicamp - Maicon 2019</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.16 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Busca');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">C:/Users/Elton/source/Repos/Projeto-SistemaNãoLinear-MS211/Projeto-SistemaNãoLinear-MS211/sistemaLinear.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="sistema_linear_8h.html">Vá para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="class_sistema_linear.html">    5</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_sistema_linear.html">SistemaLinear</a></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;{</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="class_sistema_linear.html#adfe802fa71c16580e4a6e5b968f9d2bc">    8</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="class_sistema_linear.html#adfe802fa71c16580e4a6e5b968f9d2bc">nIteracao</a>; </div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="class_sistema_linear.html#a7c9eb4314775549c6520c255eb548642">    9</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="class_sistema_linear.html#a7c9eb4314775549c6520c255eb548642">nMaxIteracao</a>; </div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="class_sistema_linear.html#a0b78f2fa0c1e6ea4c74dbea6e4583bc1">   10</a></span>&#160;        <span class="keywordtype">double</span> <a class="code" href="class_sistema_linear.html#a0b78f2fa0c1e6ea4c74dbea6e4583bc1">erroMaximo</a>; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="class_sistema_linear.html#a977d5f5209d0983d8c065166739fc7f8">   12</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="class_sistema_linear.html#a977d5f5209d0983d8c065166739fc7f8">nEquacao</a>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="class_sistema_linear.html#a817b5af3257374d7811de130a49cb696">   14</a></span>&#160;        <span class="keywordtype">double</span>** <a class="code" href="class_sistema_linear.html#a817b5af3257374d7811de130a49cb696">m</a>; </div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="class_sistema_linear.html#ab796aad3770f97a721689fe5834c1f2d">   15</a></span>&#160;        <span class="keywordtype">double</span>* <a class="code" href="class_sistema_linear.html#ab796aad3770f97a721689fe5834c1f2d">b</a>; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        </div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="class_sistema_linear.html#a4e39d1180597289f450ad232765f2a83">   17</a></span>&#160;        <span class="keywordtype">double</span>* <a class="code" href="class_sistema_linear.html#a4e39d1180597289f450ad232765f2a83">xAnt</a>; </div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="class_sistema_linear.html#a815e235be29b58915964c91d22c16c51">   18</a></span>&#160;        <span class="keywordtype">double</span>* <a class="code" href="class_sistema_linear.html#a815e235be29b58915964c91d22c16c51">xAtual</a>; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_sistema_linear.html#a498ad284ce56eec7f58c826141f13077">iterar</a>();</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordtype">double</span> <a class="code" href="class_sistema_linear.html#a648bb40391bc999556828f9c7fe4d11a">erro</a>();</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <a class="code" href="class_sistema_linear.html#a0d36ce0d7ce1de472df8a169abfab9d9">SistemaLinear</a>(<span class="keywordtype">int</span> <a class="code" href="class_sistema_linear.html#a977d5f5209d0983d8c065166739fc7f8">nEquacao</a>);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <a class="code" href="class_sistema_linear.html#aaa90620cd18fa0572a09fcb1948b14fa">~SistemaLinear</a>();</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_sistema_linear.html#ae02c4b18ff2e30b0302da95532a7266f">setParadaIteracao</a>(<span class="keywordtype">int</span> <a class="code" href="class_sistema_linear.html#a7c9eb4314775549c6520c255eb548642">nMaxIteracao</a>);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_sistema_linear.html#a76ec7e6e9eb8665daf2c01c6aa034b34">setParadaErro</a>(<span class="keywordtype">double</span> <a class="code" href="class_sistema_linear.html#a0b78f2fa0c1e6ea4c74dbea6e4583bc1">erroMaximo</a>);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_sistema_linear.html#adb654a61bfe9d2434f35b175dfb23400">inserirMatriz</a>(<span class="keywordtype">double</span>** matrizCoeficientes);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_sistema_linear.html#a50f1a72c3f19c4ddf9223059e814ae9d">inserirTermoFonte</a>(<span class="keywordtype">double</span>* fonte);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordtype">double</span>* <a class="code" href="class_sistema_linear.html#a13591eaa23be38b1ecfd3bde138c0e0d">calcular</a>();</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordtype">double</span>* <a class="code" href="class_sistema_linear.html#a13591eaa23be38b1ecfd3bde138c0e0d">calcular</a>(<span class="keywordtype">double</span>* inicial);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;};</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclass_sistema_linear_html_ae02c4b18ff2e30b0302da95532a7266f"><div class="ttname"><a href="class_sistema_linear.html#ae02c4b18ff2e30b0302da95532a7266f">SistemaLinear::setParadaIteracao</a></div><div class="ttdeci">void setParadaIteracao(int nMaxIteracao)</div><div class="ttdoc">Define o número máximo de iterações</div><div class="ttdef"><b>Definition:</b> <a href="sistema_linear_8cpp_source.html#l00023">sistemaLinear.cpp:23</a></div></div>
+<div class="ttc" id="aclass_sistema_linear_html_aaa90620cd18fa0572a09fcb1948b14fa"><div class="ttname"><a href="class_sistema_linear.html#aaa90620cd18fa0572a09fcb1948b14fa">SistemaLinear::~SistemaLinear</a></div><div class="ttdeci">~SistemaLinear()</div><div class="ttdef"><b>Definition:</b> <a href="sistema_linear_8cpp_source.html#l00019">sistemaLinear.cpp:19</a></div></div>
+<div class="ttc" id="aclass_sistema_linear_html_a0d36ce0d7ce1de472df8a169abfab9d9"><div class="ttname"><a href="class_sistema_linear.html#a0d36ce0d7ce1de472df8a169abfab9d9">SistemaLinear::SistemaLinear</a></div><div class="ttdeci">SistemaLinear(int nEquacao)</div><div class="ttdoc">Construtor da classe</div><div class="ttdef"><b>Definition:</b> <a href="sistema_linear_8cpp_source.html#l00006">sistemaLinear.cpp:6</a></div></div>
+<div class="ttc" id="aclass_sistema_linear_html_adfe802fa71c16580e4a6e5b968f9d2bc"><div class="ttname"><a href="class_sistema_linear.html#adfe802fa71c16580e4a6e5b968f9d2bc">SistemaLinear::nIteracao</a></div><div class="ttdeci">int nIteracao</div><div class="ttdef"><b>Definition:</b> <a href="sistema_linear_8h_source.html#l00008">sistemaLinear.h:8</a></div></div>
+<div class="ttc" id="aclass_sistema_linear_html_a7c9eb4314775549c6520c255eb548642"><div class="ttname"><a href="class_sistema_linear.html#a7c9eb4314775549c6520c255eb548642">SistemaLinear::nMaxIteracao</a></div><div class="ttdeci">int nMaxIteracao</div><div class="ttdoc">Índice da iteração atual</div><div class="ttdef"><b>Definition:</b> <a href="sistema_linear_8h_source.html#l00009">sistemaLinear.h:9</a></div></div>
+<div class="ttc" id="aclass_sistema_linear_html"><div class="ttname"><a href="class_sistema_linear.html">SistemaLinear</a></div><div class="ttdoc">Implementa a resolução de sistemas lineares</div><div class="ttdef"><b>Definition:</b> <a href="sistema_linear_8h_source.html#l00005">sistemaLinear.h:5</a></div></div>
+<div class="ttc" id="aclass_sistema_linear_html_a4e39d1180597289f450ad232765f2a83"><div class="ttname"><a href="class_sistema_linear.html#a4e39d1180597289f450ad232765f2a83">SistemaLinear::xAnt</a></div><div class="ttdeci">double * xAnt</div><div class="ttdoc">O vetor dos termos independentes</div><div class="ttdef"><b>Definition:</b> <a href="sistema_linear_8h_source.html#l00017">sistemaLinear.h:17</a></div></div>
+<div class="ttc" id="aclass_sistema_linear_html_a0b78f2fa0c1e6ea4c74dbea6e4583bc1"><div class="ttname"><a href="class_sistema_linear.html#a0b78f2fa0c1e6ea4c74dbea6e4583bc1">SistemaLinear::erroMaximo</a></div><div class="ttdeci">double erroMaximo</div><div class="ttdoc">Número máximo de iterações</div><div class="ttdef"><b>Definition:</b> <a href="sistema_linear_8h_source.html#l00010">sistemaLinear.h:10</a></div></div>
+<div class="ttc" id="aclass_sistema_linear_html_a13591eaa23be38b1ecfd3bde138c0e0d"><div class="ttname"><a href="class_sistema_linear.html#a13591eaa23be38b1ecfd3bde138c0e0d">SistemaLinear::calcular</a></div><div class="ttdeci">double * calcular()</div><div class="ttdoc">Calcula a solução do sistema</div><div class="ttdef"><b>Definition:</b> <a href="sistema_linear_8cpp_source.html#l00043">sistemaLinear.cpp:43</a></div></div>
+<div class="ttc" id="aclass_sistema_linear_html_a498ad284ce56eec7f58c826141f13077"><div class="ttname"><a href="class_sistema_linear.html#a498ad284ce56eec7f58c826141f13077">SistemaLinear::iterar</a></div><div class="ttdeci">void iterar()</div><div class="ttdoc">Soluçaõ atual</div><div class="ttdef"><b>Definition:</b> <a href="sistema_linear_8cpp_source.html#l00093">sistemaLinear.cpp:93</a></div></div>
+<div class="ttc" id="aclass_sistema_linear_html_a815e235be29b58915964c91d22c16c51"><div class="ttname"><a href="class_sistema_linear.html#a815e235be29b58915964c91d22c16c51">SistemaLinear::xAtual</a></div><div class="ttdeci">double * xAtual</div><div class="ttdoc">Solução anterior</div><div class="ttdef"><b>Definition:</b> <a href="sistema_linear_8h_source.html#l00018">sistemaLinear.h:18</a></div></div>
+<div class="ttc" id="aclass_sistema_linear_html_adb654a61bfe9d2434f35b175dfb23400"><div class="ttname"><a href="class_sistema_linear.html#adb654a61bfe9d2434f35b175dfb23400">SistemaLinear::inserirMatriz</a></div><div class="ttdeci">void inserirMatriz(double **matrizCoeficientes)</div><div class="ttdoc">Insere a matriz de coeficientes</div><div class="ttdef"><b>Definition:</b> <a href="sistema_linear_8cpp_source.html#l00033">sistemaLinear.cpp:33</a></div></div>
+<div class="ttc" id="aclass_sistema_linear_html_a817b5af3257374d7811de130a49cb696"><div class="ttname"><a href="class_sistema_linear.html#a817b5af3257374d7811de130a49cb696">SistemaLinear::m</a></div><div class="ttdeci">double ** m</div><div class="ttdoc">O número de equações do sistema</div><div class="ttdef"><b>Definition:</b> <a href="sistema_linear_8h_source.html#l00014">sistemaLinear.h:14</a></div></div>
+<div class="ttc" id="aclass_sistema_linear_html_a76ec7e6e9eb8665daf2c01c6aa034b34"><div class="ttname"><a href="class_sistema_linear.html#a76ec7e6e9eb8665daf2c01c6aa034b34">SistemaLinear::setParadaErro</a></div><div class="ttdeci">void setParadaErro(double erroMaximo)</div><div class="ttdoc">Define o erro máximo para parada</div><div class="ttdef"><b>Definition:</b> <a href="sistema_linear_8cpp_source.html#l00028">sistemaLinear.cpp:28</a></div></div>
+<div class="ttc" id="aclass_sistema_linear_html_ab796aad3770f97a721689fe5834c1f2d"><div class="ttname"><a href="class_sistema_linear.html#ab796aad3770f97a721689fe5834c1f2d">SistemaLinear::b</a></div><div class="ttdeci">double * b</div><div class="ttdoc">A matriz de coeficientes</div><div class="ttdef"><b>Definition:</b> <a href="sistema_linear_8h_source.html#l00015">sistemaLinear.h:15</a></div></div>
+<div class="ttc" id="aclass_sistema_linear_html_a648bb40391bc999556828f9c7fe4d11a"><div class="ttname"><a href="class_sistema_linear.html#a648bb40391bc999556828f9c7fe4d11a">SistemaLinear::erro</a></div><div class="ttdeci">double erro()</div><div class="ttdoc">Calcula o erro máximo nas funções</div><div class="ttdef"><b>Definition:</b> <a href="sistema_linear_8cpp_source.html#l00118">sistemaLinear.cpp:118</a></div></div>
+<div class="ttc" id="aclass_sistema_linear_html_a977d5f5209d0983d8c065166739fc7f8"><div class="ttname"><a href="class_sistema_linear.html#a977d5f5209d0983d8c065166739fc7f8">SistemaLinear::nEquacao</a></div><div class="ttdeci">int nEquacao</div><div class="ttdoc">Erro máximo nas funções</div><div class="ttdef"><b>Definition:</b> <a href="sistema_linear_8h_source.html#l00012">sistemaLinear.h:12</a></div></div>
+<div class="ttc" id="aclass_sistema_linear_html_a50f1a72c3f19c4ddf9223059e814ae9d"><div class="ttname"><a href="class_sistema_linear.html#a50f1a72c3f19c4ddf9223059e814ae9d">SistemaLinear::inserirTermoFonte</a></div><div class="ttdeci">void inserirTermoFonte(double *fonte)</div><div class="ttdoc">Insere o vetor de termos independentes</div><div class="ttdef"><b>Definition:</b> <a href="sistema_linear_8cpp_source.html#l00038">sistemaLinear.cpp:38</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.16
+</small></address>
+</body>
+</html>

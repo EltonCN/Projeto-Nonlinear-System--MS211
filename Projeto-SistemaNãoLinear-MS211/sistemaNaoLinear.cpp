@@ -1,10 +1,12 @@
 #include "pch.h"
 #include "sistemaNaoLinear.h"
 
+#include <iostream>
+
 ///<summary> Calcula o valor absoluto de um número </summary>
 ///<param name="x"> Número </param>
 ///<returns> Valor absoluto do número </returns>
-double abs(double x)
+/*double abs(double x)
 {
 	if (x < 0.0)
 	{
@@ -15,7 +17,7 @@ double abs(double x)
 		return x;
 	}
 }
-
+*/
 //////////
 
 
@@ -32,6 +34,7 @@ SistemaNaoLinear::SistemaNaoLinear(int nFuncao, int nIncognita):jacobiana(nFunca
 
 	this->erroMaximo = 0;
 	this->nIteracao = 0;
+	this->print = false;
 }
 
 
@@ -46,9 +49,9 @@ void SistemaNaoLinear::inserirFuncao(int indice, Funcao funcao)
 	jacobiana.inserirFuncao(indice, funcao);
 }
 
-void SistemaNaoLinear::setParadaIteracao(int nMaxInteracao)
+void SistemaNaoLinear::setParadaIteracao(int nMaxIteracao)
 {
-	this->nMaxIteracao = nMaxInteracao;
+	this->nMaxIteracao = nMaxIteracao;
 }
 
 void SistemaNaoLinear::setParadaErro(double erroMaximo)
@@ -65,11 +68,20 @@ double* SistemaNaoLinear::calcular(double* inicial)
 		this->xAnterior[i] = inicial[i];
 	}
 
+	if (print == true)
+	{
+		printX();
+	}
 	
 
 	for (int i = 0; i < this->nMaxIteracao; i++)
 	{
 		iterar();
+
+		if (print == true)
+		{
+			printX();
+		}
 
 		if (erroMaximo > 0)
 		{
@@ -146,4 +158,18 @@ void SistemaNaoLinear::atualizaX()
 void SistemaNaoLinear::atualizaJacobiana()
 {
 	this->matrizJacobiana = this->jacobiana.avaliar(xAtual);
+}
+
+void SistemaNaoLinear::printX()
+{
+	for (int i = 0; i < nIncognita; i++)
+	{
+		std::cout << xAtual[i] << " ";
+	}
+	std::cout << "\n";
+}
+
+void SistemaNaoLinear::setPrint(bool print)
+{
+	this->print = print;
 }
